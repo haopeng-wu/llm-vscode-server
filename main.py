@@ -29,21 +29,34 @@ class LLM:
     def complete(self, query):
         """Answer to a query."""
         system_setting = SystemMessage(
-            content="You help to auto complete the code.")
+            content="You help to complete the user's code.")
+        
         message = HumanMessage(content=query)
-        return self.llm([system_setting, message]).content
+        return self.llm.invoke([system_setting, message]).content
     
-    def complete_code(self, input):
+    def complete_code(self, code_context):
         """Take the input from the request and output.
 
         args:
-            input(dict): the request input
+            code_context(str): the code_context
 
         return(dict): the response
         """
-        pass
+        fore_context = get_fore_context(code_context)
+        system_setting = SystemMessage(
+            content="You are a code autocompleter.")
+        prompt = f"""
+        Please complete code for the following code. Make code completion after the end token.
+        \n\n
+        {code_context}
+        """
+        message = HumanMessage(content=prompt)
+        return self.llm.invoke([system_setting, message]).content
 
 llm = LLM(".env-35-16k.yml")
+
+def get_fore_context(inputs):
+    return inputs[: inputs.find("{end token}")].replace("{start token}","")
 
 class Health(Resource):
     def get(self):
