@@ -10,6 +10,7 @@ api = Api(app)
 
 
 class LLM:
+    verbose = False
     def __init__(self, conf_file) -> None:
         with open(conf_file, "r", encoding="utf-8") as f:
             conf = yaml.safe_load(f.read())
@@ -48,9 +49,12 @@ class LLM:
         prompt = f"""
         Please complete code for the following code. Make code completion after the end token.
         \n\n
-        {code_context}
+        {fore_context}
         """
         message = HumanMessage(content=prompt)
+        if LLM.verbose:
+            from pprint import pprint
+            pprint(prompt)
         return self.llm.invoke([system_setting, message]).content
 
 llm = LLM(".env-35-16k.yml")
@@ -70,11 +74,11 @@ class Generate(Resource):
             inputs = request_json['inputs']
             llm.complete_code(inputs)
             # Returning a response with status code 200
-            return {'completion': llm.complete(input)}, 200
+            return {'generated_text': llm.complete(input)}, 200
         else:
             return "Content type is not supported."
-        
-        
+
+
 
 
 ##
