@@ -1,747 +1,4 @@
-2024-01-19 23:03:20,007 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-END_TOKEN = "
-2024-01-19 23:03:21,461 - INFO - 127.0.0.1 - - [19/Jan/2024 23:03:21] "POST / HTTP/1.1" 200 -
-2024-01-19 23:04:18,939 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-END_TOKEN = "
-2024-01-19 23:04:21,358 - INFO - 127.0.0.1 - - [19/Jan/2024 23:04:21] "POST / HTTP/1.1" 200 -
-2024-01-19 23:05:51,197 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-
-2024-01-19 23:05:52,462 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-wi
-2024-01-19 23:05:52,721 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with
-2024-01-19 23:05:53,100 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with 
-2024-01-19 23:05:53,315 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with o
-2024-01-19 23:05:53,416 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with op
-2024-01-19 23:05:53,586 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with ope
-2024-01-19 23:05:53,684 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open
-2024-01-19 23:05:53,869 - INFO - 127.0.0.1 - - [19/Jan/2024 23:05:53] "POST / HTTP/1.1" 200 -
-2024-01-19 23:05:54,611 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open(
-2024-01-19 23:05:55,290 - INFO - 127.0.0.1 - - [19/Jan/2024 23:05:55] "POST / HTTP/1.1" 200 -
-2024-01-19 23:05:55,576 - INFO - 127.0.0.1 - - [19/Jan/2024 23:05:55] "POST / HTTP/1.1" 200 -
-2024-01-19 23:05:55,580 - INFO - 127.0.0.1 - - [19/Jan/2024 23:05:55] "POST / HTTP/1.1" 200 -
-2024-01-19 23:05:55,899 - INFO - 127.0.0.1 - - [19/Jan/2024 23:05:55] "POST / HTTP/1.1" 200 -
-2024-01-19 23:05:55,995 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("
-2024-01-19 23:05:56,163 - INFO - 127.0.0.1 - - [19/Jan/2024 23:05:56] "POST / HTTP/1.1" 200 -
-2024-01-19 23:05:56,673 - INFO - 127.0.0.1 - - [19/Jan/2024 23:05:56] "POST / HTTP/1.1" 200 -
-2024-01-19 23:05:56,937 - INFO - 127.0.0.1 - - [19/Jan/2024 23:05:56] "POST / HTTP/1.1" 200 -
-2024-01-19 23:05:57,271 - INFO - 127.0.0.1 - - [19/Jan/2024 23:05:57] "POST / HTTP/1.1" 200 -
-2024-01-19 23:05:58,432 - INFO - 127.0.0.1 - - [19/Jan/2024 23:05:58] "POST / HTTP/1.1" 200 -
-2024-01-19 23:06:00,512 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("c
-2024-01-19 23:06:00,618 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("co
-2024-01-19 23:06:00,748 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("con
-2024-01-19 23:06:01,092 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf
-2024-01-19 23:06:01,205 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.
-2024-01-19 23:06:01,568 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.y
-2024-01-19 23:06:01,832 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.ym
-2024-01-19 23:06:01,937 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml
-2024-01-19 23:06:02,731 - INFO - 127.0.0.1 - - [19/Jan/2024 23:06:02] "POST / HTTP/1.1" 200 -
-2024-01-19 23:06:02,828 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml",
-2024-01-19 23:06:02,928 - INFO - 127.0.0.1 - - [19/Jan/2024 23:06:02] "POST / HTTP/1.1" 200 -
-2024-01-19 23:06:03,004 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", 
-2024-01-19 23:06:03,440 - INFO - 127.0.0.1 - - [19/Jan/2024 23:06:03] "POST / HTTP/1.1" 200 -
-2024-01-19 23:06:03,678 - INFO - 127.0.0.1 - - [19/Jan/2024 23:06:03] "POST / HTTP/1.1" 200 -
-2024-01-19 23:06:03,759 - INFO - 127.0.0.1 - - [19/Jan/2024 23:06:03] "POST / HTTP/1.1" 200 -
-2024-01-19 23:06:03,907 - INFO - 127.0.0.1 - - [19/Jan/2024 23:06:03] "POST / HTTP/1.1" 200 -
-2024-01-19 23:06:04,187 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "
-2024-01-19 23:06:04,290 - INFO - 127.0.0.1 - - [19/Jan/2024 23:06:04] "POST / HTTP/1.1" 200 -
-2024-01-19 23:06:04,349 - INFO - 127.0.0.1 - - [19/Jan/2024 23:06:04] "POST / HTTP/1.1" 200 -
-2024-01-19 23:06:04,829 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r
-2024-01-19 23:06:05,577 - INFO - 127.0.0.1 - - [19/Jan/2024 23:06:05] "POST / HTTP/1.1" 200 -
-2024-01-19 23:06:05,630 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r"
-2024-01-19 23:06:05,681 - INFO - 127.0.0.1 - - [19/Jan/2024 23:06:05] "POST / HTTP/1.1" 200 -
-2024-01-19 23:06:06,886 - INFO - 127.0.0.1 - - [19/Jan/2024 23:06:06] "POST / HTTP/1.1" 200 -
-2024-01-19 23:06:08,210 - INFO - 127.0.0.1 - - [19/Jan/2024 23:06:08] "POST / HTTP/1.1" 200 -
-2024-01-19 23:06:08,688 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r") 
-2024-01-19 23:06:09,102 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r")
-2024-01-19 23:06:09,121 - INFO - 127.0.0.1 - - [19/Jan/2024 23:06:09] "POST / HTTP/1.1" 200 -
-2024-01-19 23:06:09,471 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r"):
-2024-01-19 23:06:09,778 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r"): 
-2024-01-19 23:06:10,202 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r"):
-2024-01-19 23:06:10,365 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r")
-2024-01-19 23:06:10,821 - INFO - 127.0.0.1 - - [19/Jan/2024 23:06:10] "POST / HTTP/1.1" 200 -
-2024-01-19 23:06:11,098 - INFO - 127.0.0.1 - - [19/Jan/2024 23:06:11] "POST / HTTP/1.1" 200 -
-2024-01-19 23:06:11,136 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r") 
-2024-01-19 23:06:11,298 - INFO - 127.0.0.1 - - [19/Jan/2024 23:06:11] "POST / HTTP/1.1" 200 -
-2024-01-19 23:06:11,478 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r") a
-2024-01-19 23:06:11,648 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r") as
-2024-01-19 23:06:11,962 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r") as 
-2024-01-19 23:06:12,244 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r") as f
-2024-01-19 23:06:12,251 - INFO - 127.0.0.1 - - [19/Jan/2024 23:06:12] "POST / HTTP/1.1" 200 -
-2024-01-19 23:06:12,618 - INFO - 127.0.0.1 - - [19/Jan/2024 23:06:12] "POST / HTTP/1.1" 200 -
-2024-01-19 23:06:12,635 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r") as f:
-2024-01-19 23:06:13,011 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r") as f:
-    
-2024-01-19 23:06:13,371 - INFO - 127.0.0.1 - - [19/Jan/2024 23:06:13] "POST / HTTP/1.1" 200 -
-2024-01-19 23:06:13,565 - INFO - 127.0.0.1 - - [19/Jan/2024 23:06:13] "POST / HTTP/1.1" 200 -
-2024-01-19 23:06:13,793 - INFO - 127.0.0.1 - - [19/Jan/2024 23:06:13] "POST / HTTP/1.1" 200 -
-2024-01-19 23:06:14,086 - INFO - 127.0.0.1 - - [19/Jan/2024 23:06:14] "POST / HTTP/1.1" 200 -
-2024-01-19 23:06:15,028 - INFO - 127.0.0.1 - - [19/Jan/2024 23:06:15] "POST / HTTP/1.1" 200 -
-2024-01-19 23:06:15,031 - INFO - 127.0.0.1 - - [19/Jan/2024 23:06:15] "POST / HTTP/1.1" 200 -
-2024-01-19 23:06:15,052 - INFO - 127.0.0.1 - - [19/Jan/2024 23:06:15] "POST / HTTP/1.1" 200 -
-2024-01-19 23:06:17,196 - INFO - 127.0.0.1 - - [19/Jan/2024 23:06:17] "POST / HTTP/1.1" 200 -
-2024-01-19 23:06:19,790 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r") as f:
-    
-2024-01-19 23:06:22,701 - INFO - 127.0.0.1 - - [19/Jan/2024 23:06:22] "POST / HTTP/1.1" 200 -
-2024-01-19 23:06:24,938 - INFO - from flask import Flask, request
+2024-01-19 23:23:32,673 - INFO - from flask import Flask, request
 from flask_restful import reqparse, abort, Api, Resource
 from langchain.chat_models import AzureChatOpenAI
 from langchain.schema import HumanMessage, SystemMessage
@@ -761,1057 +18,1173 @@ api = Api(app)
 with open("conf.yml", "r") as f:
     config = yaml.safe_load(f)
 
-chat_model = AzureChatOpenAI(config["azure_chat_openai"])
+END_TOKEN = config["END_TOKEN"]
+START_TOKEN = config["START_TOKEN"]
+MID_TOKEN = config["MID_TOKEN"]
+MAX_TOKENS = config["MAX_TOKENS"]
+2024-01-19 23:23:32,938 - INFO - from flask import Flask, request
+from flask_restful import reqparse, abort, Api, Resource
+from langchain.chat_models import AzureChatOpenAI
+from langchain.schema import HumanMessage, SystemMessage
+import yaml
+import json
+from pprint import pprint
+from termcolor import colored
 
-class Chat(Resource):
+import logging
+
+# Configure the logging module
+logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+app = Flask(__name__)
+api = Api(app)
+
+with open("conf.yml", "r") as f:
+    config = yaml.safe_load(f)
+
+END_TOKEN = config["END_TOKEN"]
+START_TOKEN = config["START_TOKEN"]
+MID_TOKEN = config["MID_TOKEN"]
+MAX_TOKENS = config["MAX_TOKENS"]
+
+2024-01-19 23:23:35,081 - INFO - 127.0.0.1 - - [19/Jan/2024 23:23:35] "POST / HTTP/1.1" 200 -
+2024-01-19 23:23:35,159 - INFO - 127.0.0.1 - - [19/Jan/2024 23:23:35] "POST / HTTP/1.1" 200 -
+2024-01-19 23:23:53,808 - INFO -  * Detected change in '/Users/haopengwu/MetaSpace/repos/llm-vscode-server/main.py', reloading
+2024-01-19 23:23:53,923 - INFO -  * Restarting with stat
+2024-01-19 23:23:54,661 - WARNING -  * Debugger is active!
+2024-01-19 23:23:54,674 - INFO -  * Debugger PIN: 253-101-103
+2024-01-19 23:23:58,037 - INFO - from flask import Flask, request
+from flask_restful import reqparse, abort, Api, Resource
+from langchain.chat_models import AzureChatOpenAI
+from langchain.schema import HumanMessage, SystemMessage
+import yaml
+import json
+from pprint import pprint
+from termcolor import colored
+
+import logging
+
+# Configure the logging module
+logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+app = Flask(__name__)
+api = Api(app)
+
+with open("conf.yml", "r") as f:
+    config = yaml.safe_load(f)
+
+END_TOKEN = config["END_TOKEN"]
+START_TOKEN = config["START_TOKEN"]
+MID_TOKEN = config["MID_TOKEN"]
+MAX_TOKENS = config["MAX_TOKENS"]
+
+
+class LLM:
+    verbose = False
+    def __init__(self, conf_file) -> None:
+        with open(conf_file, "r", encoding="utf-8") as f:
+            conf = yaml.safe_load(f.read())
+        OPENAI_API_KEY = conf["OPENAI_API_KEY"]
+        OPENAI_API_BASE = conf["OPENAI_API_BASE"]
+        OPENAI_API_VERSION = conf["OPENAI_API_VERSION"]
+        DEPLOYMENT = conf["DEPLOYMENT"]
+        self.llm = AzureChatOpenAI(
+            openai_api_type="azure",
+            openai_api_version=OPENAI_API_VERSION,
+            openai_api_base=OPENAI_API_BASE,
+            openai_api_key=OPENAI_API_KEY,
+            deployment_name=DEPLOYMENT,
+            temperature=0,
+            max_tokens=MAX_TOKENS,
+            
+2024-01-19 23:24:01,627 - INFO - 127.0.0.1 - - [19/Jan/2024 23:24:01] "POST / HTTP/1.1" 200 -
+2024-01-19 23:24:03,798 - INFO - from flask import Flask, request
+from flask_restful import reqparse, abort, Api, Resource
+from langchain.chat_models import AzureChatOpenAI
+from langchain.schema import HumanMessage, SystemMessage
+import yaml
+import json
+from pprint import pprint
+from termcolor import colored
+
+import logging
+
+# Configure the logging module
+logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+app = Flask(__name__)
+api = Api(app)
+
+with open("conf.yml", "r") as f:
+    config = yaml.safe_load(f)
+
+END_TOKEN = config["END_TOKEN"]
+START_TOKEN = config["START_TOKEN"]
+MID_TOKEN = config["MID_TOKEN"]
+MAX_TOKENS = config["MAX_TOKENS"]
+
+
+class LLM:
+    verbose = False
+    def __init__(self, conf_file) -> None:
+        with open(conf_file, "r", encoding="utf-8") as f:
+            conf = yaml.safe_load(f.read())
+        OPENAI_API_KEY = conf["OPENAI_API_KEY"]
+        OPENAI_API_BASE = conf["OPENAI_API_BASE"]
+        OPENAI_API_VERSION = conf["OPENAI_API_VERSION"]
+        DEPLOYMENT = conf["DEPLOYMENT"]
+        self.llm = AzureChatOpenAI(
+            openai_api_type="azure",
+            openai_api_version=OPENAI_API_VERSION,
+            openai_api_base=OPENAI_API_BASE,
+            openai_api_key=OPENAI_API_KEY,
+            deployment_name=DEPLOYMENT,
+            temperature=0,
+            max_tokens=MAX_TOKENS,
+        
+2024-01-19 23:24:04,092 - INFO - from flask import Flask, request
+from flask_restful import reqparse, abort, Api, Resource
+from langchain.chat_models import AzureChatOpenAI
+from langchain.schema import HumanMessage, SystemMessage
+import yaml
+import json
+from pprint import pprint
+from termcolor import colored
+
+import logging
+
+# Configure the logging module
+logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+app = Flask(__name__)
+api = Api(app)
+
+with open("conf.yml", "r") as f:
+    config = yaml.safe_load(f)
+
+END_TOKEN = config["END_TOKEN"]
+START_TOKEN = config["START_TOKEN"]
+MID_TOKEN = config["MID_TOKEN"]
+MAX_TOKENS = config["MAX_TOKENS"]
+
+
+class LLM:
+    verbose = False
+    def __init__(self, conf_file) -> None:
+        with open(conf_file, "r", encoding="utf-8") as f:
+            conf = yaml.safe_load(f.read())
+        OPENAI_API_KEY = conf["OPENAI_API_KEY"]
+        OPENAI_API_BASE = conf["OPENAI_API_BASE"]
+        OPENAI_API_VERSION = conf["OPENAI_API_VERSION"]
+        DEPLOYMENT = conf["DEPLOYMENT"]
+        self.llm = AzureChatOpenAI(
+            openai_api_type="azure",
+            openai_api_version=OPENAI_API_VERSION,
+            openai_api_base=OPENAI_API_BASE,
+            openai_api_key=OPENAI_API_KEY,
+            deployment_name=DEPLOYMENT,
+            temperature=0,
+            max_tokens=MAX_TOKENS,
+    
+2024-01-19 23:24:04,314 - INFO - from flask import Flask, request
+from flask_restful import reqparse, abort, Api, Resource
+from langchain.chat_models import AzureChatOpenAI
+from langchain.schema import HumanMessage, SystemMessage
+import yaml
+import json
+from pprint import pprint
+from termcolor import colored
+
+import logging
+
+# Configure the logging module
+logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+app = Flask(__name__)
+api = Api(app)
+
+with open("conf.yml", "r") as f:
+    config = yaml.safe_load(f)
+
+END_TOKEN = config["END_TOKEN"]
+START_TOKEN = config["START_TOKEN"]
+MID_TOKEN = config["MID_TOKEN"]
+MAX_TOKENS = config["MAX_TOKENS"]
+
+
+class LLM:
+    verbose = False
+    def __init__(self, conf_file) -> None:
+        with open(conf_file, "r", encoding="utf-8") as f:
+            conf = yaml.safe_load(f.read())
+        OPENAI_API_KEY = conf["OPENAI_API_KEY"]
+        OPENAI_API_BASE = conf["OPENAI_API_BASE"]
+        OPENAI_API_VERSION = conf["OPENAI_API_VERSION"]
+        DEPLOYMENT = conf["DEPLOYMENT"]
+        self.llm = AzureChatOpenAI(
+            openai_api_type="azure",
+            openai_api_version=OPENAI_API_VERSION,
+            openai_api_base=OPENAI_API_BASE,
+            openai_api_key=OPENAI_API_KEY,
+            deployment_name=DEPLOYMENT,
+            temperature=0,
+            max_tokens=MAX_TOKENS,
+
+2024-01-19 23:24:04,675 - INFO - from flask import Flask, request
+from flask_restful import reqparse, abort, Api, Resource
+from langchain.chat_models import AzureChatOpenAI
+from langchain.schema import HumanMessage, SystemMessage
+import yaml
+import json
+from pprint import pprint
+from termcolor import colored
+
+import logging
+
+# Configure the logging module
+logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+app = Flask(__name__)
+api = Api(app)
+
+with open("conf.yml", "r") as f:
+    config = yaml.safe_load(f)
+
+END_TOKEN = config["END_TOKEN"]
+START_TOKEN = config["START_TOKEN"]
+MID_TOKEN = config["MID_TOKEN"]
+MAX_TOKENS = config["MAX_TOKENS"]
+
+
+class LLM:
+    verbose = False
+    def __init__(self, conf_file) -> None:
+        with open(conf_file, "r", encoding="utf-8") as f:
+            conf = yaml.safe_load(f.read())
+        OPENAI_API_KEY = conf["OPENAI_API_KEY"]
+        OPENAI_API_BASE = conf["OPENAI_API_BASE"]
+        OPENAI_API_VERSION = conf["OPENAI_API_VERSION"]
+        DEPLOYMENT = conf["DEPLOYMENT"]
+        self.llm = AzureChatOpenAI(
+            openai_api_type="azure",
+            openai_api_version=OPENAI_API_VERSION,
+            openai_api_base=OPENAI_API_BASE,
+            openai_api_key=OPENAI_API_KEY,
+            deployment_name=DEPLOYMENT,
+            temperature=0,
+            max_tokens=MAX_TOKENS,
+2024-01-19 23:24:05,812 - INFO -  * Detected change in '/Users/haopengwu/MetaSpace/repos/llm-vscode-server/main.py', reloading
+2024-01-19 23:24:05,920 - INFO -  * Restarting with stat
+2024-01-19 23:24:06,515 - WARNING -  * Debugger is active!
+2024-01-19 23:24:06,528 - INFO -  * Debugger PIN: 253-101-103
+2024-01-19 23:24:07,763 - INFO - from flask import Flask, request
+from flask_restful import reqparse, abort, Api, Resource
+from langchain.chat_models import AzureChatOpenAI
+from langchain.schema import HumanMessage, SystemMessage
+import yaml
+import json
+from pprint import pprint
+from termcolor import colored
+
+import logging
+
+# Configure the logging module
+logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+app = Flask(__name__)
+api = Api(app)
+
+with open("conf.yml", "r") as f:
+    config = yaml.safe_load(f)
+
+END_TOKEN = config["END_TOKEN"]
+START_TOKEN = config["START_TOKEN"]
+MID_TOKEN = config["MID_TOKEN"]
+MAX_TOKENS = config["MAX_TOKENS"]
+
+
+class LLM:
+    verbose = False
+    def __init__(self, conf_file) -> None:
+        with open(conf_file, "r", encoding="utf-8") as f:
+            conf = yaml.safe_load(f.read())
+        OPENAI_API_KEY = conf["OPENAI_API_KEY"]
+        OPENAI_API_BASE = conf["OPENAI_API_BASE"]
+        OPENAI_API_VERSION = conf["OPENAI_API_VERSION"]
+        DEPLOYMENT = conf["DEPLOYMENT"]
+        self.llm = AzureChatOpenAI(
+            openai_api_type="azure",
+            openai_api_version=OPENAI_API_VERSION,
+            openai_api_base=OPENAI_API_BASE,
+            openai_api_key=OPENAI_API_KEY,
+            deployment_name=DEPLOYMENT,
+            temperature=0,
+            max_tokens=MAX_TOKENS,
+        )
+
+    def complete_code(self, code_context):
+        """Take the input from the request and output.
+
+        args:
+            code_context(str): the code_context
+
+        return(dict): the response
+        """
+        
+2024-01-19 23:24:08,955 - INFO - 127.0.0.1 - - [19/Jan/2024 23:24:08] "POST / HTTP/1.1" 200 -
+2024-01-19 23:24:12,417 - INFO - from flask import Flask, request
+from flask_restful import reqparse, abort, Api, Resource
+from langchain.chat_models import AzureChatOpenAI
+from langchain.schema import HumanMessage, SystemMessage
+import yaml
+import json
+from pprint import pprint
+from termcolor import colored
+
+import logging
+
+# Configure the logging module
+logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+app = Flask(__name__)
+api = Api(app)
+
+with open("conf.yml", "r") as f:
+    config = yaml.safe_load(f)
+
+END_TOKEN = config["END_TOKEN"]
+START_TOKEN = config["START_TOKEN"]
+MID_TOKEN = config["MID_TOKEN"]
+MAX_TOKENS = config["MAX_TOKENS"]
+
+
+class LLM:
+    verbose = False
+    def __init__(self, conf_file) -> None:
+        with open(conf_file, "r", encoding="utf-8") as f:
+            conf = yaml.safe_load(f.read())
+        OPENAI_API_KEY = conf["OPENAI_API_KEY"]
+        OPENAI_API_BASE = conf["OPENAI_API_BASE"]
+        OPENAI_API_VERSION = conf["OPENAI_API_VERSION"]
+        DEPLOYMENT = conf["DEPLOYMENT"]
+        self.llm = AzureChatOpenAI(
+            openai_api_type="azure",
+            openai_api_version=OPENAI_API_VERSION,
+            openai_api_base=OPENAI_API_BASE,
+            openai_api_key=OPENAI_API_KEY,
+            deployment_name=DEPLOYMENT,
+            temperature=0,
+            max_tokens=MAX_TOKENS,
+        )
+
+    def complete_code(self, code_context):
+        """Take the input from the request and output.
+
+        args:
+            code_context(str): the code_context
+
+        return(dict): the response
+        """
+        
+2024-01-19 23:24:13,591 - INFO - 127.0.0.1 - - [19/Jan/2024 23:24:13] "POST / HTTP/1.1" 200 -
+2024-01-19 23:24:23,312 - INFO - from flask import Flask, request
+from flask_restful import reqparse, abort, Api, Resource
+from langchain.chat_models import AzureChatOpenAI
+from langchain.schema import HumanMessage, SystemMessage
+import yaml
+import json
+from pprint import pprint
+from termcolor import colored
+
+import logging
+
+# Configure the logging module
+logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+app = Flask(__name__)
+api = Api(app)
+
+with open("conf.yml", "r") as f:
+    config = yaml.safe_load(f)
+
+END_TOKEN = config["END_TOKEN"]
+START_TOKEN = config["START_TOKEN"]
+MID_TOKEN = config["MID_TOKEN"]
+MAX_TOKENS = config["MAX_TOKENS"]
+
+
+class LLM:
+    verbose = False
+    def __init__(self, conf_file) -> None:
+        with open(conf_file, "r", encoding="utf-8") as f:
+            conf = yaml.safe_load(f.read())
+        OPENAI_API_KEY = conf["OPENAI_API_KEY"]
+        OPENAI_API_BASE = conf["OPENAI_API_BASE"]
+        OPENAI_API_VERSION = conf["OPENAI_API_VERSION"]
+        DEPLOYMENT = conf["DEPLOYMENT"]
+        self.llm = AzureChatOpenAI(
+            openai_api_type="azure",
+            openai_api_version=OPENAI_API_VERSION,
+            openai_api_base=OPENAI_API_BASE,
+            openai_api_key=OPENAI_API_KEY,
+            deployment_name=DEPLOYMENT,
+            temperature=0,
+            max_tokens=MAX_TOKENS,
+        )
+
+    def complete_code(self, code_context):
+        """Take the input from the request and output.
+
+        args:
+            code_context(str): the code_context
+
+        return(dict): the response
+        """
+
+2024-01-19 23:24:24,650 - INFO - 127.0.0.1 - - [19/Jan/2024 23:24:24] "POST / HTTP/1.1" 200 -
+2024-01-19 23:24:24,738 - INFO -  * Detected change in '/Users/haopengwu/MetaSpace/repos/llm-vscode-server/main.py', reloading
+2024-01-19 23:24:24,848 - INFO -  * Restarting with stat
+2024-01-19 23:24:25,421 - WARNING -  * Debugger is active!
+2024-01-19 23:24:25,434 - INFO -  * Debugger PIN: 253-101-103
+2024-01-19 23:24:26,314 - INFO - from flask import Flask, request
+from flask_restful import reqparse, abort, Api, Resource
+from langchain.chat_models import AzureChatOpenAI
+from langchain.schema import HumanMessage, SystemMessage
+import yaml
+import json
+from pprint import pprint
+from termcolor import colored
+
+import logging
+
+# Configure the logging module
+logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+app = Flask(__name__)
+api = Api(app)
+
+with open("conf.yml", "r") as f:
+    config = yaml.safe_load(f)
+
+END_TOKEN = config["END_TOKEN"]
+START_TOKEN = config["START_TOKEN"]
+MID_TOKEN = config["MID_TOKEN"]
+MAX_TOKENS = config["MAX_TOKENS"]
+
+
+class LLM:
+    verbose = False
+    def __init__(self, conf_file) -> None:
+        with open(conf_file, "r", encoding="utf-8") as f:
+            conf = yaml.safe_load(f.read())
+        OPENAI_API_KEY = conf["OPENAI_API_KEY"]
+        OPENAI_API_BASE = conf["OPENAI_API_BASE"]
+        OPENAI_API_VERSION = conf["OPENAI_API_VERSION"]
+        DEPLOYMENT = conf["DEPLOYMENT"]
+        self.llm = AzureChatOpenAI(
+            openai_api_type="azure",
+            openai_api_version=OPENAI_API_VERSION,
+            openai_api_base=OPENAI_API_BASE,
+            openai_api_key=OPENAI_API_KEY,
+            deployment_name=DEPLOYMENT,
+            temperature=0,
+            max_tokens=MAX_TOKENS,
+        )
+
+    def complete_code(self, code_context):
+        """Take the input from the request and output.
+
+        args:
+            code_context(str): the code_context
+
+        return(dict): the response
+        """
+        fore_context = get_fore_context(code_context)
+        system_setting = SystemMessage(
+            content="You are a code autocompleter.")
+        prompt = f"""
+        Please complete code for the following code. Only output code text without markdown. Make code completion after the end token.
+        \n\n
+        {fore_context}
+        """ 
+        
+2024-01-19 23:24:29,787 - INFO - 127.0.0.1 - - [19/Jan/2024 23:24:29] "POST / HTTP/1.1" 200 -
+2024-01-19 23:24:31,845 - INFO - from flask import Flask, request
+from flask_restful import reqparse, abort, Api, Resource
+from langchain.chat_models import AzureChatOpenAI
+from langchain.schema import HumanMessage, SystemMessage
+import yaml
+import json
+from pprint import pprint
+from termcolor import colored
+
+import logging
+
+# Configure the logging module
+logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+app = Flask(__name__)
+api = Api(app)
+
+with open("conf.yml", "r") as f:
+    config = yaml.safe_load(f)
+
+END_TOKEN = config["END_TOKEN"]
+START_TOKEN = config["START_TOKEN"]
+MID_TOKEN = config["MID_TOKEN"]
+MAX_TOKENS = config["MAX_TOKENS"]
+
+
+class LLM:
+    verbose = False
+    def __init__(self, conf_file) -> None:
+        with open(conf_file, "r", encoding="utf-8") as f:
+            conf = yaml.safe_load(f.read())
+        OPENAI_API_KEY = conf["OPENAI_API_KEY"]
+        OPENAI_API_BASE = conf["OPENAI_API_BASE"]
+        OPENAI_API_VERSION = conf["OPENAI_API_VERSION"]
+        DEPLOYMENT = conf["DEPLOYMENT"]
+        self.llm = AzureChatOpenAI(
+            openai_api_type="azure",
+            openai_api_version=OPENAI_API_VERSION,
+            openai_api_base=OPENAI_API_BASE,
+            openai_api_key=OPENAI_API_KEY,
+            deployment_name=DEPLOYMENT,
+            temperature=0,
+            max_tokens=MAX_TOKENS,
+        )
+
+    def complete_code(self, code_context):
+        """Take the input from the request and output.
+
+        args:
+            code_context(str): the code_context
+
+        return(dict): the response
+        """
+        fore_context = get_fore_context(code_context)
+        system_setting = SystemMessage(
+            content="You are a code autocompleter.")
+        prompt = f"""
+        Please complete code for the following code. Only output code text without markdown. Make code completion after the end token.
+        \n\n
+        {fore_context}
+        """ 
+        
+2024-01-19 23:24:34,371 - INFO - from flask import Flask, request
+from flask_restful import reqparse, abort, Api, Resource
+from langchain.chat_models import AzureChatOpenAI
+from langchain.schema import HumanMessage, SystemMessage
+import yaml
+import json
+from pprint import pprint
+from termcolor import colored
+
+import logging
+
+# Configure the logging module
+logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+app = Flask(__name__)
+api = Api(app)
+
+with open("conf.yml", "r") as f:
+    config = yaml.safe_load(f)
+
+END_TOKEN = config["END_TOKEN"]
+START_TOKEN = config["START_TOKEN"]
+MID_TOKEN = config["MID_TOKEN"]
+MAX_TOKENS = config["MAX_TOKENS"]
+
+
+class LLM:
+    verbose = False
+    def __init__(self, conf_file) -> None:
+        with open(conf_file, "r", encoding="utf-8") as f:
+            conf = yaml.safe_load(f.read())
+        OPENAI_API_KEY = conf["OPENAI_API_KEY"]
+        OPENAI_API_BASE = conf["OPENAI_API_BASE"]
+        OPENAI_API_VERSION = conf["OPENAI_API_VERSION"]
+        DEPLOYMENT = conf["DEPLOYMENT"]
+        self.llm = AzureChatOpenAI(
+            openai_api_type="azure",
+            openai_api_version=OPENAI_API_VERSION,
+            openai_api_base=OPENAI_API_BASE,
+            openai_api_key=OPENAI_API_KEY,
+            deployment_name=DEPLOYMENT,
+            temperature=0,
+            max_tokens=MAX_TOKENS,
+        )
+
+    def complete_code(self, code_context):
+        """Take the input from the request and output.
+
+        args:
+            code_context(str): the code_context
+
+        return(dict): the response
+        """
+        fore_context = get_fore_context(code_context)
+        system_setting = SystemMessage(
+            content="You are a code autocompleter.")
+        prompt = f"""
+        Please complete code for the following code. Only output code text without markdown. Make code completion after the end token.
+        \n\n
+        {fore_context}
+        """ 
+
+2024-01-19 23:24:35,168 - INFO - from flask import Flask, request
+from flask_restful import reqparse, abort, Api, Resource
+from langchain.chat_models import AzureChatOpenAI
+from langchain.schema import HumanMessage, SystemMessage
+import yaml
+import json
+from pprint import pprint
+from termcolor import colored
+
+import logging
+
+# Configure the logging module
+logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+app = Flask(__name__)
+api = Api(app)
+
+with open("conf.yml", "r") as f:
+    config = yaml.safe_load(f)
+
+END_TOKEN = config["END_TOKEN"]
+START_TOKEN = config["START_TOKEN"]
+MID_TOKEN = config["MID_TOKEN"]
+MAX_TOKENS = config["MAX_TOKENS"]
+
+
+class LLM:
+    verbose = False
+    def __init__(self, conf_file) -> None:
+        with open(conf_file, "r", encoding="utf-8") as f:
+            conf = yaml.safe_load(f.read())
+        OPENAI_API_KEY = conf["OPENAI_API_KEY"]
+        OPENAI_API_BASE = conf["OPENAI_API_BASE"]
+        OPENAI_API_VERSION = conf["OPENAI_API_VERSION"]
+        DEPLOYMENT = conf["DEPLOYMENT"]
+        self.llm = AzureChatOpenAI(
+            openai_api_type="azure",
+            openai_api_version=OPENAI_API_VERSION,
+            openai_api_base=OPENAI_API_BASE,
+            openai_api_key=OPENAI_API_KEY,
+            deployment_name=DEPLOYMENT,
+            temperature=0,
+            max_tokens=MAX_TOKENS,
+        )
+
+    def complete_code(self, code_context):
+        """Take the input from the request and output.
+
+        args:
+            code_context(str): the code_context
+
+        return(dict): the response
+        """
+        fore_context = get_fore_context(code_context)
+        system_setting = SystemMessage(
+            content="You are a code autocompleter.")
+        prompt = f"""
+        Please complete code for the following code. Only output code text without markdown. Make code completion after the end token.
+        \n\n
+        {fore_context}
+        """ 
+2024-01-19 23:24:35,219 - INFO - 127.0.0.1 - - [19/Jan/2024 23:24:35] "POST / HTTP/1.1" 200 -
+2024-01-19 23:24:35,551 - INFO -  * Detected change in '/Users/haopengwu/MetaSpace/repos/llm-vscode-server/main.py', reloading
+2024-01-19 23:24:35,661 - INFO -  * Restarting with stat
+2024-01-19 23:24:36,262 - WARNING -  * Debugger is active!
+2024-01-19 23:24:36,275 - INFO -  * Debugger PIN: 253-101-103
+2024-01-19 23:24:37,540 - INFO - from flask import Flask, request
+from flask_restful import reqparse, abort, Api, Resource
+from langchain.chat_models import AzureChatOpenAI
+from langchain.schema import HumanMessage, SystemMessage
+import yaml
+import json
+from pprint import pprint
+from termcolor import colored
+
+import logging
+
+# Configure the logging module
+logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+app = Flask(__name__)
+api = Api(app)
+
+with open("conf.yml", "r") as f:
+    config = yaml.safe_load(f)
+
+END_TOKEN = config["END_TOKEN"]
+START_TOKEN = config["START_TOKEN"]
+MID_TOKEN = config["MID_TOKEN"]
+MAX_TOKENS = config["MAX_TOKENS"]
+
+
+class LLM:
+    verbose = False
+    def __init__(self, conf_file) -> None:
+        with open(conf_file, "r", encoding="utf-8") as f:
+            conf = yaml.safe_load(f.read())
+        OPENAI_API_KEY = conf["OPENAI_API_KEY"]
+        OPENAI_API_BASE = conf["OPENAI_API_BASE"]
+        OPENAI_API_VERSION = conf["OPENAI_API_VERSION"]
+        DEPLOYMENT = conf["DEPLOYMENT"]
+        self.llm = AzureChatOpenAI(
+            openai_api_type="azure",
+            openai_api_version=OPENAI_API_VERSION,
+            openai_api_base=OPENAI_API_BASE,
+            openai_api_key=OPENAI_API_KEY,
+            deployment_name=DEPLOYMENT,
+            temperature=0,
+            max_tokens=MAX_TOKENS,
+        )
+
+    def complete_code(self, code_context):
+        """Take the input from the request and output.
+
+        args:
+            code_context(str): the code_context
+
+        return(dict): the response
+        """
+        fore_context = get_fore_context(code_context)
+        system_setting = SystemMessage(
+            content="You are a code autocompleter.")
+        prompt = f"""
+        Please complete code for the following code. Only output code text without markdown. Make code completion after the end token.
+        \n\n
+        {fore_context}
+        """ 
+        logging.info(fore_context)
+        message = HumanMessage(content=prompt)
+        
+2024-01-19 23:24:38,794 - INFO - 127.0.0.1 - - [19/Jan/2024 23:24:38] "POST / HTTP/1.1" 200 -
+2024-01-19 23:24:40,179 - INFO - from flask import Flask, request
+from flask_restful import reqparse, abort, Api, Resource
+from langchain.chat_models import AzureChatOpenAI
+from langchain.schema import HumanMessage, SystemMessage
+import yaml
+import json
+from pprint import pprint
+from termcolor import colored
+
+import logging
+
+# Configure the logging module
+logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+app = Flask(__name__)
+api = Api(app)
+
+with open("conf.yml", "r") as f:
+    config = yaml.safe_load(f)
+
+END_TOKEN = config["END_TOKEN"]
+START_TOKEN = config["START_TOKEN"]
+MID_TOKEN = config["MID_TOKEN"]
+MAX_TOKENS = config["MAX_TOKENS"]
+
+
+class LLM:
+    verbose = False
+    def __init__(self, conf_file) -> None:
+        with open(conf_file, "r", encoding="utf-8") as f:
+            conf = yaml.safe_load(f.read())
+        OPENAI_API_KEY = conf["OPENAI_API_KEY"]
+        OPENAI_API_BASE = conf["OPENAI_API_BASE"]
+        OPENAI_API_VERSION = conf["OPENAI_API_VERSION"]
+        DEPLOYMENT = conf["DEPLOYMENT"]
+        self.llm = AzureChatOpenAI(
+            openai_api_type="azure",
+            openai_api_version=OPENAI_API_VERSION,
+            openai_api_base=OPENAI_API_BASE,
+            openai_api_key=OPENAI_API_KEY,
+            deployment_name=DEPLOYMENT,
+            temperature=0,
+            max_tokens=MAX_TOKENS,
+        )
+
+    def complete_code(self, code_context):
+        """Take the input from the request and output.
+
+        args:
+            code_context(str): the code_context
+
+        return(dict): the response
+        """
+        fore_context = get_fore_context(code_context)
+        system_setting = SystemMessage(
+            content="You are a code autocompleter.")
+        prompt = f"""
+        Please complete code for the following code. Only output code text without markdown. Make code completion after the end token.
+        \n\n
+        {fore_context}
+        """ 
+        logging.info(fore_context)
+        message = HumanMessage(content=prompt)
+    
+2024-01-19 23:24:40,467 - INFO - from flask import Flask, request
+from flask_restful import reqparse, abort, Api, Resource
+from langchain.chat_models import AzureChatOpenAI
+from langchain.schema import HumanMessage, SystemMessage
+import yaml
+import json
+from pprint import pprint
+from termcolor import colored
+
+import logging
+
+# Configure the logging module
+logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+app = Flask(__name__)
+api = Api(app)
+
+with open("conf.yml", "r") as f:
+    config = yaml.safe_load(f)
+
+END_TOKEN = config["END_TOKEN"]
+START_TOKEN = config["START_TOKEN"]
+MID_TOKEN = config["MID_TOKEN"]
+MAX_TOKENS = config["MAX_TOKENS"]
+
+
+class LLM:
+    verbose = False
+    def __init__(self, conf_file) -> None:
+        with open(conf_file, "r", encoding="utf-8") as f:
+            conf = yaml.safe_load(f.read())
+        OPENAI_API_KEY = conf["OPENAI_API_KEY"]
+        OPENAI_API_BASE = conf["OPENAI_API_BASE"]
+        OPENAI_API_VERSION = conf["OPENAI_API_VERSION"]
+        DEPLOYMENT = conf["DEPLOYMENT"]
+        self.llm = AzureChatOpenAI(
+            openai_api_type="azure",
+            openai_api_version=OPENAI_API_VERSION,
+            openai_api_base=OPENAI_API_BASE,
+            openai_api_key=OPENAI_API_KEY,
+            deployment_name=DEPLOYMENT,
+            temperature=0,
+            max_tokens=MAX_TOKENS,
+        )
+
+    def complete_code(self, code_context):
+        """Take the input from the request and output.
+
+        args:
+            code_context(str): the code_context
+
+        return(dict): the response
+        """
+        fore_context = get_fore_context(code_context)
+        system_setting = SystemMessage(
+            content="You are a code autocompleter.")
+        prompt = f"""
+        Please complete code for the following code. Only output code text without markdown. Make code completion after the end token.
+        \n\n
+        {fore_context}
+        """ 
+        logging.info(fore_context)
+        message = HumanMessage(content=prompt)
+
+2024-01-19 23:24:40,791 - INFO - from flask import Flask, request
+from flask_restful import reqparse, abort, Api, Resource
+from langchain.chat_models import AzureChatOpenAI
+from langchain.schema import HumanMessage, SystemMessage
+import yaml
+import json
+from pprint import pprint
+from termcolor import colored
+
+import logging
+
+# Configure the logging module
+logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+app = Flask(__name__)
+api = Api(app)
+
+with open("conf.yml", "r") as f:
+    config = yaml.safe_load(f)
+
+END_TOKEN = config["END_TOKEN"]
+START_TOKEN = config["START_TOKEN"]
+MID_TOKEN = config["MID_TOKEN"]
+MAX_TOKENS = config["MAX_TOKENS"]
+
+
+class LLM:
+    verbose = False
+    def __init__(self, conf_file) -> None:
+        with open(conf_file, "r", encoding="utf-8") as f:
+            conf = yaml.safe_load(f.read())
+        OPENAI_API_KEY = conf["OPENAI_API_KEY"]
+        OPENAI_API_BASE = conf["OPENAI_API_BASE"]
+        OPENAI_API_VERSION = conf["OPENAI_API_VERSION"]
+        DEPLOYMENT = conf["DEPLOYMENT"]
+        self.llm = AzureChatOpenAI(
+            openai_api_type="azure",
+            openai_api_version=OPENAI_API_VERSION,
+            openai_api_base=OPENAI_API_BASE,
+            openai_api_key=OPENAI_API_KEY,
+            deployment_name=DEPLOYMENT,
+            temperature=0,
+            max_tokens=MAX_TOKENS,
+        )
+
+    def complete_code(self, code_context):
+        """Take the input from the request and output.
+
+        args:
+            code_context(str): the code_context
+
+        return(dict): the response
+        """
+        fore_context = get_fore_context(code_context)
+        system_setting = SystemMessage(
+            content="You are a code autocompleter.")
+        prompt = f"""
+        Please complete code for the following code. Only output code text without markdown. Make code completion after the end token.
+        \n\n
+        {fore_context}
+        """ 
+        logging.info(fore_context)
+        message = HumanMessage(content=prompt)
+2024-01-19 23:24:41,336 - INFO -  * Detected change in '/Users/haopengwu/MetaSpace/repos/llm-vscode-server/main.py', reloading
+2024-01-19 23:24:41,451 - INFO -  * Restarting with stat
+2024-01-19 23:24:42,033 - WARNING -  * Debugger is active!
+2024-01-19 23:24:42,046 - INFO -  * Debugger PIN: 253-101-103
+2024-01-19 23:24:45,063 - INFO - from flask import Flask, request
+from flask_restful import reqparse, abort, Api, Resource
+from langchain.chat_models import AzureChatOpenAI
+from langchain.schema import HumanMessage, SystemMessage
+import yaml
+import json
+from pprint import pprint
+from termcolor import colored
+
+import logging
+
+# Configure the logging module
+logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+app = Flask(__name__)
+api = Api(app)
+
+with open("conf.yml", "r") as f:
+    config = yaml.safe_load(f)
+
+END_TOKEN = config["END_TOKEN"]
+START_TOKEN = config["START_TOKEN"]
+MID_TOKEN = config["MID_TOKEN"]
+MAX_TOKENS = config["MAX_TOKENS"]
+
+
+class LLM:
+    verbose = False
+    def __init__(self, conf_file) -> None:
+        with open(conf_file, "r", encoding="utf-8") as f:
+            conf = yaml.safe_load(f.read())
+        OPENAI_API_KEY = conf["OPENAI_API_KEY"]
+        OPENAI_API_BASE = conf["OPENAI_API_BASE"]
+        OPENAI_API_VERSION = conf["OPENAI_API_VERSION"]
+        DEPLOYMENT = conf["DEPLOYMENT"]
+        self.llm = AzureChatOpenAI(
+            openai_api_type="azure",
+            openai_api_version=OPENAI_API_VERSION,
+            openai_api_base=OPENAI_API_BASE,
+            openai_api_key=OPENAI_API_KEY,
+            deployment_name=DEPLOYMENT,
+            temperature=0,
+            max_tokens=MAX_TOKENS,
+        )
+
+    def complete_code(self, code_context):
+        """Take the input from the request and output.
+
+        args:
+            code_context(str): the code_context
+
+        return(dict): the response
+        """
+        fore_context = get_fore_context(code_context)
+        system_setting = SystemMessage(
+            content="You are a code autocompleter.")
+        prompt = f"""
+        Please complete code for the following code. Only output code text without markdown. Make code completion after the end token.
+        \n\n
+        {fore_context}
+        """ 
+        logging.info(fore_context)
+        message = HumanMessage(content=prompt)
+        return self.llm.invoke([system_setting, message]).content
+
+llm = LLM(".env-35-16k.yml")
+
+2024-01-19 23:24:47,102 - INFO - 127.0.0.1 - - [19/Jan/2024 23:24:47] "POST / HTTP/1.1" 200 -
+2024-01-19 23:25:06,774 - INFO - from flask import Flask, request
+from flask_restful import reqparse, abort, Api, Resource
+from langchain.chat_models import AzureChatOpenAI
+from langchain.schema import HumanMessage, SystemMessage
+import yaml
+import json
+from pprint import pprint
+from termcolor import colored
+
+import logging
+
+# Configure the logging module
+logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+app = Flask(__name__)
+api = Api(app)
+
+with open("conf.yml", "r") as f:
+    config = yaml.safe_load(f)
+
+END_TOKEN = config["END_TOKEN"]
+START_TOKEN = config["START_TOKEN"]
+MID_TOKEN = config["MID_TOKEN"]
+MAX_TOKENS = config["MAX_TOKENS"]
+
+
+class LLM:
+    verbose = False
+    def __init__(self, conf_file) -> None:
+        with open(conf_file, "r", encoding="utf-8") as f:
+            conf = yaml.safe_load(f.read())
+        OPENAI_API_KEY = conf["OPENAI_API_KEY"]
+        OPENAI_API_BASE = conf["OPENAI_API_BASE"]
+        OPENAI_API_VERSION = conf["OPENAI_API_VERSION"]
+        DEPLOYMENT = conf["DEPLOYMENT"]
+        self.llm = AzureChatOpenAI(
+            openai_api_type="azure",
+            openai_api_version=OPENAI_API_VERSION,
+            openai_api_base=OPENAI_API_BASE,
+            openai_api_key=OPENAI_API_KEY,
+            deployment_name=DEPLOYMENT,
+            temperature=0,
+            max_tokens=MAX_TOKENS,
+        )
+
+    def complete_code(self, code_context):
+        """Take the input from the request and output.
+
+        args:
+            code_context(str): the code_context
+
+        return(dict): the response
+        """
+        fore_context = get_fore_context(code_context)
+        system_setting = SystemMessage(
+            content="You are a code autocompleter.")
+        prompt = f"""
+        Please complete code for the following code. Only output code text without markdown. Make code completion after the end token.
+        \n\n
+        {fore_context}
+        """ 
+        logging.info(fore_context)
+        message = HumanMessage(content=prompt)
+        return self.llm.invoke([system_setting, message]).content
+
+llm = LLM(".env-35-16k.yml")
+
+2024-01-19 23:25:09,379 - INFO -  * Detected change in '/Users/haopengwu/MetaSpace/repos/llm-vscode-server/main.py', reloading
+2024-01-19 23:25:09,494 - INFO -  * Restarting with stat
+2024-01-19 23:25:10,074 - WARNING -  * Debugger is active!
+2024-01-19 23:25:10,087 - INFO -  * Debugger PIN: 253-101-103
+2024-01-19 23:25:11,738 - INFO - from flask import Flask, request
+from flask_restful import reqparse, abort, Api, Resource
+from langchain.chat_models import AzureChatOpenAI
+from langchain.schema import HumanMessage, SystemMessage
+import yaml
+import json
+from pprint import pprint
+from termcolor import colored
+
+import logging
+
+# Configure the logging module
+logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+app = Flask(__name__)
+api = Api(app)
+
+with open("conf.yml", "r") as f:
+    config = yaml.safe_load(f)
+
+END_TOKEN = config["END_TOKEN"]
+START_TOKEN = config["START_TOKEN"]
+MID_TOKEN = config["MID_TOKEN"]
+MAX_TOKENS = config["MAX_TOKENS"]
+
+
+class LLM:
+    verbose = False
+    def __init__(self, conf_file) -> None:
+        with open(conf_file, "r", encoding="utf-8") as f:
+            conf = yaml.safe_load(f.read())
+        OPENAI_API_KEY = conf["OPENAI_API_KEY"]
+        OPENAI_API_BASE = conf["OPENAI_API_BASE"]
+        OPENAI_API_VERSION = conf["OPENAI_API_VERSION"]
+        DEPLOYMENT = conf["DEPLOYMENT"]
+        self.llm = AzureChatOpenAI(
+            openai_api_type="azure",
+            openai_api_version=OPENAI_API_VERSION,
+            openai_api_base=OPENAI_API_BASE,
+            openai_api_key=OPENAI_API_KEY,
+            deployment_name=DEPLOYMENT,
+            temperature=0,
+            max_tokens=MAX_TOKENS,
+        )
+
+    def complete_code(self, code_context):
+        """Take the input from the request and output.
+
+        args:
+            code_context(str): the code_context
+
+        return(dict): the response
+        """
+        fore_context = get_fore_context(code_context)
+        system_setting = SystemMessage(
+            content="You are a code autocompleter.")
+        prompt = f"""
+        Please complete code for the following code. Only output code text without markdown. Make code completion after the end token.
+        \n\n
+        {fore_context}
+        """ 
+        logging.info(fore_context)
+        message = HumanMessage(content=prompt)
+        return self.llm.invoke([system_setting, message]).content
+
+llm = LLM(".env-35-16k.yml")
+
+def get_fore_context(inputs):
+    return inputs[: inputs.find(END_TOKEN)].replace(START_TOKEN,"") 
+
+class Health(Resource):
+    def get(self):
+        return {'message': 'healthy'}, 200
+
+class Generate(Resource):
     def post(self):
-        data = request.get_json()
-        message = data["message"]
-        
-        # Send message to chat model
-        response = chat_model.send_message(message)
-        
-        # Process response
-        if response["role"] == "system":
-            system_message = SystemMessage(response["message"])
-            system_message.process()
-            return system_message.to_dict()
+        content_type = request.headers.get('Content-Type')
+        if (content_type == 'application/json'):
+            request_json = request.get_json()
+            inputs = request_json['inputs']
+            # Returning a response with status code 200
+            return {'generated_text': llm.complete_code(inputs)}, 200
         else:
-            human_message = HumanMessage(response["message"])
-            human_message.process()
-            return human_message.to_dict()
+            return "Content type is not supported."
 
-api.add_resource(Chat, "/chat")
 
-if __name__ == "__main__":
-    app.run(debug=True)
-2024-01-19 23:06:29,587 - INFO - 127.0.0.1 - - [19/Jan/2024 23:06:29] "POST / HTTP/1.1" 200 -
-2024-01-19 23:07:01,303 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r") as f:
-    co
-2024-01-19 23:07:01,455 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r") as f:
-    con
-2024-01-19 23:07:02,155 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r") as f:
-    conf
-2024-01-19 23:07:02,329 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r") as f:
-    confi
-2024-01-19 23:07:02,834 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r") as f:
-    config
-2024-01-19 23:07:03,110 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r") as f:
-    config 
-2024-01-19 23:07:03,233 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r") as f:
-    config =
-2024-01-19 23:07:03,376 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r") as f:
-    config = 
-2024-01-19 23:07:03,526 - INFO - 127.0.0.1 - - [19/Jan/2024 23:07:03] "POST / HTTP/1.1" 200 -
-2024-01-19 23:07:03,948 - INFO - 127.0.0.1 - - [19/Jan/2024 23:07:03] "POST / HTTP/1.1" 200 -
-2024-01-19 23:07:05,310 - INFO - 127.0.0.1 - - [19/Jan/2024 23:07:05] "POST / HTTP/1.1" 200 -
-2024-01-19 23:07:05,314 - INFO - 127.0.0.1 - - [19/Jan/2024 23:07:05] "POST / HTTP/1.1" 200 -
-2024-01-19 23:07:05,316 - INFO - 127.0.0.1 - - [19/Jan/2024 23:07:05] "POST / HTTP/1.1" 200 -
-2024-01-19 23:07:05,319 - INFO - 127.0.0.1 - - [19/Jan/2024 23:07:05] "POST / HTTP/1.1" 200 -
-2024-01-19 23:07:07,503 - INFO - 127.0.0.1 - - [19/Jan/2024 23:07:07] "POST / HTTP/1.1" 200 -
-2024-01-19 23:07:07,506 - INFO - 127.0.0.1 - - [19/Jan/2024 23:07:07] "POST / HTTP/1.1" 200 -
-2024-01-19 23:07:10,398 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r") as f:
-    config =
-2024-01-19 23:07:10,663 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r") as f:
-    config = 
-2024-01-19 23:07:12,239 - INFO - 127.0.0.1 - - [19/Jan/2024 23:07:12] "POST / HTTP/1.1" 200 -
-2024-01-19 23:07:14,007 - INFO - 127.0.0.1 - - [19/Jan/2024 23:07:14] "POST / HTTP/1.1" 200 -
-2024-01-19 23:07:17,238 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r") as f:
-    config =
-2024-01-19 23:07:17,478 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r") as f:
-    config = 
-2024-01-19 23:07:19,891 - INFO - 127.0.0.1 - - [19/Jan/2024 23:07:19] "POST / HTTP/1.1" 200 -
-2024-01-19 23:07:19,895 - INFO - 127.0.0.1 - - [19/Jan/2024 23:07:19] "POST / HTTP/1.1" 200 -
-2024-01-19 23:07:20,991 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r") as f:
-    config = yaml
-2024-01-19 23:07:21,384 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r") as f:
-    config = yaml.
-2024-01-19 23:07:21,694 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r") as f:
-    config = yaml.safe_load
-2024-01-19 23:07:21,970 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r") as f:
-    config = yaml.safe_load(
-2024-01-19 23:07:22,457 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r") as f:
-    config = yaml.safe_load(f
-2024-01-19 23:07:22,842 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r") as f:
-    config = yaml.safe_load(f)
-
-
-2024-01-19 23:07:23,797 - INFO - 127.0.0.1 - - [19/Jan/2024 23:07:23] "POST / HTTP/1.1" 200 -
-2024-01-19 23:07:23,878 - INFO - 127.0.0.1 - - [19/Jan/2024 23:07:23] "POST / HTTP/1.1" 200 -
-2024-01-19 23:07:24,772 - INFO - 127.0.0.1 - - [19/Jan/2024 23:07:24] "POST / HTTP/1.1" 200 -
-2024-01-19 23:07:25,376 - INFO - 127.0.0.1 - - [19/Jan/2024 23:07:25] "POST / HTTP/1.1" 200 -
-2024-01-19 23:07:25,380 - INFO - 127.0.0.1 - - [19/Jan/2024 23:07:25] "POST / HTTP/1.1" 200 -
-2024-01-19 23:07:25,402 - INFO - 127.0.0.1 - - [19/Jan/2024 23:07:25] "POST / HTTP/1.1" 200 -
-2024-01-19 23:07:33,778 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r") as f:
-    config = yaml.safe_load(f)
-
-END_TOKEN 
-2024-01-19 23:07:33,935 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r") as f:
-    config = yaml.safe_load(f)
-
-END_TOKEN =
-2024-01-19 23:07:34,053 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r") as f:
-    config = yaml.safe_load(f)
-
-END_TOKEN = 
-2024-01-19 23:07:34,766 - INFO - 127.0.0.1 - - [19/Jan/2024 23:07:34] "POST / HTTP/1.1" 200 -
-2024-01-19 23:07:34,769 - INFO - 127.0.0.1 - - [19/Jan/2024 23:07:34] "POST / HTTP/1.1" 200 -
-2024-01-19 23:07:37,044 - INFO - 127.0.0.1 - - [19/Jan/2024 23:07:37] "POST / HTTP/1.1" 200 -
-2024-01-19 23:07:58,476 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r") as f:
-    config = yaml.safe_load(f)
-
-END_TOKEN =
-2024-01-19 23:07:58,646 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r") as f:
-    config = yaml.safe_load(f)
-
-END_TOKEN = 
-2024-01-19 23:08:06,255 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r") as f:
-    config = yaml.safe_load(f)
-
-END_TOKEN =
-2024-01-19 23:08:06,552 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r") as f:
-    config = yaml.safe_load(f)
-
-END_TOKEN = 
-2024-01-19 23:08:10,263 - INFO - 127.0.0.1 - - [19/Jan/2024 23:08:10] "POST / HTTP/1.1" 200 -
-2024-01-19 23:08:10,281 - INFO - 127.0.0.1 - - [19/Jan/2024 23:08:10] "POST / HTTP/1.1" 200 -
-2024-01-19 23:08:10,544 - INFO - 127.0.0.1 - - [19/Jan/2024 23:08:10] "POST / HTTP/1.1" 200 -
-2024-01-19 23:08:10,664 - INFO - 127.0.0.1 - - [19/Jan/2024 23:08:10] "POST / HTTP/1.1" 200 -
-2024-01-19 23:08:13,069 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r") as f:
-    config = yaml.safe_load(f)
-
-END_TOKEN = config[
-2024-01-19 23:08:14,018 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r") as f:
-    config = yaml.safe_load(f)
-
-END_TOKEN = config["
-2024-01-19 23:08:15,446 - INFO - 127.0.0.1 - - [19/Jan/2024 23:08:15] "POST / HTTP/1.1" 200 -
-2024-01-19 23:08:17,437 - INFO - 127.0.0.1 - - [19/Jan/2024 23:08:17] "POST / HTTP/1.1" 200 -
-2024-01-19 23:08:28,014 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r") as f:
-    config = yaml.safe_load(f)
-
-END_TOKEN = config["END_TOKEN"]
-
-2024-01-19 23:08:30,256 - INFO - 127.0.0.1 - - [19/Jan/2024 23:08:30] "POST / HTTP/1.1" 200 -
-2024-01-19 23:08:33,297 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r") as f:
-    config = yaml.safe_load(f)
-
-END_TOKEN = config["END_TOKEN"]
-START_TOKEN 
-2024-01-19 23:08:33,431 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r") as f:
-    config = yaml.safe_load(f)
-
-END_TOKEN = config["END_TOKEN"]
-START_TOKEN =
-2024-01-19 23:08:33,552 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r") as f:
-    config = yaml.safe_load(f)
-
-END_TOKEN = config["END_TOKEN"]
-START_TOKEN = 
-2024-01-19 23:08:34,788 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r") as f:
-    config = yaml.safe_load(f)
-
-END_TOKEN = config["END_TOKEN"]
-START_TOKEN = co
-2024-01-19 23:08:34,930 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r") as f:
-    config = yaml.safe_load(f)
-
-END_TOKEN = config["END_TOKEN"]
-START_TOKEN = con
-2024-01-19 23:08:35,599 - INFO - 127.0.0.1 - - [19/Jan/2024 23:08:35] "POST / HTTP/1.1" 200 -
-2024-01-19 23:08:36,028 - INFO - 127.0.0.1 - - [19/Jan/2024 23:08:36] "POST / HTTP/1.1" 200 -
-2024-01-19 23:08:36,163 - INFO - 127.0.0.1 - - [19/Jan/2024 23:08:36] "POST / HTTP/1.1" 200 -
-2024-01-19 23:08:36,364 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r") as f:
-    config = yaml.safe_load(f)
-
-END_TOKEN = config["END_TOKEN"]
-START_TOKEN = con
-2024-01-19 23:08:36,681 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r") as f:
-    config = yaml.safe_load(f)
-
-END_TOKEN = config["END_TOKEN"]
-START_TOKEN = config
-2024-01-19 23:08:37,275 - INFO - 127.0.0.1 - - [19/Jan/2024 23:08:37] "POST / HTTP/1.1" 200 -
-2024-01-19 23:08:37,380 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r") as f:
-    config = yaml.safe_load(f)
-
-END_TOKEN = config["END_TOKEN"]
-START_TOKEN = config[
-2024-01-19 23:08:37,563 - INFO - 127.0.0.1 - - [19/Jan/2024 23:08:37] "POST / HTTP/1.1" 200 -
-2024-01-19 23:08:38,126 - INFO - 127.0.0.1 - - [19/Jan/2024 23:08:38] "POST / HTTP/1.1" 200 -
-2024-01-19 23:08:38,676 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r") as f:
-    config = yaml.safe_load(f)
-
-END_TOKEN = config["END_TOKEN"]
-START_TOKEN = config["
-2024-01-19 23:08:39,714 - INFO - 127.0.0.1 - - [19/Jan/2024 23:08:39] "POST / HTTP/1.1" 200 -
-2024-01-19 23:08:40,325 - INFO - 127.0.0.1 - - [19/Jan/2024 23:08:40] "POST / HTTP/1.1" 200 -
-2024-01-19 23:08:41,415 - INFO - 127.0.0.1 - - [19/Jan/2024 23:08:41] "POST / HTTP/1.1" 200 -
-2024-01-19 23:08:43,989 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r") as f:
-    config = yaml.safe_load(f)
-
-END_TOKEN = config["END_TOKEN"]
-START_TOKEN = config["START_TOKEN"]
-
-2024-01-19 23:08:47,394 - INFO - 127.0.0.1 - - [19/Jan/2024 23:08:47] "POST / HTTP/1.1" 200 -
-2024-01-19 23:08:47,604 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r") as f:
-    config = yaml.safe_load(f)
-
-END_TOKEN = config["END_TOKEN"]
-START_TOKEN = config["START_TOKEN"]
-MID_TOKEN 
-2024-01-19 23:08:47,741 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r") as f:
-    config = yaml.safe_load(f)
-
-END_TOKEN = config["END_TOKEN"]
-START_TOKEN = config["START_TOKEN"]
-MID_TOKEN =
-2024-01-19 23:08:47,862 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r") as f:
-    config = yaml.safe_load(f)
-
-END_TOKEN = config["END_TOKEN"]
-START_TOKEN = config["START_TOKEN"]
-MID_TOKEN = 
-2024-01-19 23:08:48,557 - INFO - 127.0.0.1 - - [19/Jan/2024 23:08:48] "POST / HTTP/1.1" 200 -
-2024-01-19 23:08:48,615 - INFO - 127.0.0.1 - - [19/Jan/2024 23:08:48] "POST / HTTP/1.1" 200 -
-2024-01-19 23:08:48,951 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r") as f:
-    config = yaml.safe_load(f)
-
-END_TOKEN = config["END_TOKEN"]
-START_TOKEN = config["START_TOKEN"]
-MID_TOKEN = co
-2024-01-19 23:08:49,090 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r") as f:
-    config = yaml.safe_load(f)
-
-END_TOKEN = config["END_TOKEN"]
-START_TOKEN = config["START_TOKEN"]
-MID_TOKEN = con
-2024-01-19 23:08:50,772 - INFO - 127.0.0.1 - - [19/Jan/2024 23:08:50] "POST / HTTP/1.1" 200 -
-2024-01-19 23:08:50,779 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r") as f:
-    config = yaml.safe_load(f)
-
-END_TOKEN = config["END_TOKEN"]
-START_TOKEN = config["START_TOKEN"]
-MID_TOKEN = config
-2024-01-19 23:08:51,155 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r") as f:
-    config = yaml.safe_load(f)
-
-END_TOKEN = config["END_TOKEN"]
-START_TOKEN = config["START_TOKEN"]
-MID_TOKEN = config["
-2024-01-19 23:08:51,378 - INFO - 127.0.0.1 - - [19/Jan/2024 23:08:51] "POST / HTTP/1.1" 200 -
-2024-01-19 23:08:51,465 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r") as f:
-    config = yaml.safe_load(f)
-
-END_TOKEN = config["END_TOKEN"]
-START_TOKEN = config["START_TOKEN"]
-MID_TOKEN = config["MID_TOKEN
-2024-01-19 23:08:51,600 - INFO - 127.0.0.1 - - [19/Jan/2024 23:08:51] "POST / HTTP/1.1" 200 -
-2024-01-19 23:08:52,833 - INFO - 127.0.0.1 - - [19/Jan/2024 23:08:52] "POST / HTTP/1.1" 200 -
-2024-01-19 23:08:52,987 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r") as f:
-    config = yaml.safe_load(f)
-
-END_TOKEN = config["END_TOKEN"]
-2024-01-19 23:08:53,853 - INFO - from flask import Flask, request
+2024-01-19 23:25:12,059 - INFO - from flask import Flask, request
 from flask_restful import reqparse, abort, Api, Resource
 from langchain.chat_models import AzureChatOpenAI
 from langchain.schema import HumanMessage, SystemMessage
@@ -1834,122 +1207,8 @@ with open("conf.yml", "r") as f:
 END_TOKEN = config["END_TOKEN"]
 START_TOKEN = config["START_TOKEN"]
 MID_TOKEN = config["MID_TOKEN"]
-END_TOKEN = "
-2024-01-19 23:08:54,168 - INFO - 127.0.0.1 - - [19/Jan/2024 23:08:54] "POST / HTTP/1.1" 200 -
-2024-01-19 23:08:54,308 - INFO - 127.0.0.1 - - [19/Jan/2024 23:08:54] "POST / HTTP/1.1" 200 -
-2024-01-19 23:08:56,007 - INFO - 127.0.0.1 - - [19/Jan/2024 23:08:56] "POST / HTTP/1.1" 200 -
-2024-01-19 23:08:56,453 - INFO - 127.0.0.1 - - [19/Jan/2024 23:08:56] "POST / HTTP/1.1" 200 -
-2024-01-19 23:08:57,376 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
+MAX_TOKENS = config["MAX_TOKENS"]
 
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r") as f:
-    config = yaml.safe_load(f)
-
-END_TOKEN = config["END_TOKEN"]
-START_TOKEN = config["START_TOKEN"]
-MID_TOKEN = config["MID_TOKEN"]
-2024-01-19 23:08:58,381 - INFO -  * Detected change in '/Users/haopengwu/MetaSpace/repos/llm-vscode-server/main.py', reloading
-2024-01-19 23:08:59,284 - WARNING -  * Debugger is active!
-2024-01-19 23:08:59,298 - INFO -  * Debugger PIN: 253-101-103
-2024-01-19 23:09:04,353 - INFO -  * Detected change in '/Users/haopengwu/MetaSpace/repos/llm-vscode-server/main.py', reloading
-2024-01-19 23:09:05,028 - WARNING -  * Debugger is active!
-2024-01-19 23:09:05,040 - INFO -  * Debugger PIN: 253-101-103
-2024-01-19 23:09:12,651 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r") as f:
-    config = yaml.safe_load(f)
-
-END_TOKEN = config["END_TOKEN"]
-START_TOKEN = config["START_TOKEN"]
-MID_TOKEN = config["MID_TOKEN"] 
-2024-01-19 23:09:15,680 - INFO - 127.0.0.1 - - [19/Jan/2024 23:09:15] "POST / HTTP/1.1" 200 -
-2024-01-19 23:09:33,387 - INFO -  * Detected change in '/Users/haopengwu/MetaSpace/repos/llm-vscode-server/main.py', reloading
-2024-01-19 23:09:34,067 - WARNING -  * Debugger is active!
-2024-01-19 23:09:34,080 - INFO -  * Debugger PIN: 253-101-103
-2024-01-19 23:09:39,145 - INFO -  * Detected change in '/Users/haopengwu/MetaSpace/repos/llm-vscode-server/main.py', reloading
-2024-01-19 23:09:39,833 - WARNING -  * Debugger is active!
-2024-01-19 23:09:39,846 - INFO -  * Debugger PIN: 253-101-103
-2024-01-19 23:09:41,874 - INFO -  * Detected change in '/Users/haopengwu/MetaSpace/repos/llm-vscode-server/main.py', reloading
-2024-01-19 23:09:42,562 - WARNING -  * Debugger is active!
-2024-01-19 23:09:42,575 - INFO -  * Debugger PIN: 253-101-103
-2024-01-19 23:09:45,614 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r") as f:
-    config = yaml.safe_load(f)
-
-END_TOKEN = config["END_TOKEN"]
-START_TOKEN = config["START_TOKEN"]
-MID_TOKEN = config["MID_TOKEN"]
-2024-01-19 23:09:46,638 - INFO -  * Detected change in '/Users/haopengwu/MetaSpace/repos/llm-vscode-server/main.py', reloading
-2024-01-19 23:09:47,335 - WARNING -  * Debugger is active!
-2024-01-19 23:09:47,348 - INFO -  * Debugger PIN: 253-101-103
-2024-01-19 23:10:19,333 - INFO - from flask import Flask, request
-from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
-import yaml
-import json
-from pprint import pprint
-from termcolor import colored
-
-import logging
-
-# Configure the logging module
-logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-app = Flask(__name__)
-api = Api(app)
-
-with open("conf.yml", "r") as f:
-    config = yaml.safe_load(f)
-
-END_TOKEN = config["END_TOKEN"]
-START_TOKEN = config["START_TOKEN"]
-MID_TOKEN = config["MID_TOKEN"]
 
 class LLM:
     verbose = False
@@ -1967,6 +1226,7 @@ class LLM:
             openai_api_key=OPENAI_API_KEY,
             deployment_name=DEPLOYMENT,
             temperature=0,
+            max_tokens=MAX_TOKENS,
         )
 
     def complete_code(self, code_context):
@@ -1981,12 +1241,37 @@ class LLM:
         system_setting = SystemMessage(
             content="You are a code autocompleter.")
         prompt = f"""
-        Please complete code for the following code. Make code completion after the end token.
+        Please complete code for the following code. Only output code text without markdown. Make code completion after the end token.
         \n\n
-        {fore_context} 
+        {fore_context}
         """ 
-        logging.info(colored(fore_context))
-2024-01-19 23:10:20,504 - INFO - from flask import Flask, request
+        logging.info(fore_context)
+        message = HumanMessage(content=prompt)
+        return self.llm.invoke([system_setting, message]).content
+
+llm = LLM(".env-35-16k.yml")
+
+def get_fore_context(inputs):
+    return inputs[: inputs.find(END_TOKEN)].replace(START_TOKEN,"") 
+
+class Health(Resource):
+    def get(self):
+        return {'message': 'healthy'}, 200
+
+class Generate(Resource):
+    def post(self):
+        content_type = request.headers.get('Content-Type')
+        if (content_type == 'application/json'):
+            request_json = request.get_json()
+            inputs = request_json['inputs']
+            # Returning a response with status code 200
+            return {'generated_text': llm.complete_code(inputs)}, 200
+        else:
+            return "Content type is not supported."
+
+2024-01-19 23:25:14,101 - INFO - 127.0.0.1 - - [19/Jan/2024 23:25:14] "POST / HTTP/1.1" 200 -
+2024-01-19 23:25:15,957 - INFO - 127.0.0.1 - - [19/Jan/2024 23:25:15] "POST / HTTP/1.1" 200 -
+2024-01-19 23:25:46,333 - INFO - from flask import Flask, request
 from flask_restful import reqparse, abort, Api, Resource
 from langchain.chat_models import AzureChatOpenAI
 from langchain.schema import HumanMessage, SystemMessage
@@ -2009,6 +1294,8 @@ with open("conf.yml", "r") as f:
 END_TOKEN = config["END_TOKEN"]
 START_TOKEN = config["START_TOKEN"]
 MID_TOKEN = config["MID_TOKEN"]
+MAX_TOKENS = config["MAX_TOKENS"]
+
 
 class LLM:
     verbose = False
@@ -2026,6 +1313,7 @@ class LLM:
             openai_api_key=OPENAI_API_KEY,
             deployment_name=DEPLOYMENT,
             temperature=0,
+            max_tokens=MAX_TOKENS,
         )
 
     def complete_code(self, code_context):
@@ -2040,12 +1328,53 @@ class LLM:
         system_setting = SystemMessage(
             content="You are a code autocompleter.")
         prompt = f"""
-        Please complete code for the following code. Make code completion after the end token.
+        Please complete code for the following code. Only output code text without markdown. Make code completion after the end token.
         \n\n
-        {fore_context} 
+        {fore_context}
         """ 
-        logging.info(colored(fore_context),
-2024-01-19 23:10:20,663 - INFO - from flask import Flask, request
+        logging.info(fore_context)
+        message = HumanMessage(content=prompt)
+        return self.llm.invoke([system_setting, message]).content
+
+llm = LLM(".env-35-16k.yml")
+
+def get_fore_context(inputs):
+    return inputs[: inputs.find(END_TOKEN)].replace(START_TOKEN,"") 
+
+class Health(Resource):
+    def get(self):
+        return {'message': 'healthy'}, 200
+
+class Generate(Resource):
+    def post(self):
+        content_type = request.headers.get('Content-Type')
+        if (content_type == 'application/json'):
+            request_json = request.get_json()
+            inputs = request_json['inputs']
+            # Returning a response with status code 200
+            return {'generated_text': llm.complete_code(inputs)}, 200
+        else:
+            return "Content type is not supported."
+
+2024-01-19 23:25:49,565 - INFO -  * Detected change in '/Users/haopengwu/MetaSpace/repos/llm-vscode-server/main.py', reloading
+2024-01-19 23:25:49,673 - INFO -  * Restarting with stat
+2024-01-19 23:25:50,241 - WARNING -  * Debugger is active!
+2024-01-19 23:25:50,254 - INFO -  * Debugger PIN: 253-101-103
+2024-01-19 23:26:29,951 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-01-19 23:26:29,951 - INFO - [33mPress CTRL+C to quit[0m
+2024-01-19 23:26:29,952 - INFO -  * Restarting with stat
+2024-01-19 23:26:30,519 - WARNING -  * Debugger is active!
+2024-01-19 23:26:30,533 - INFO -  * Debugger PIN: 253-101-103
+2024-01-19 23:26:45,698 - INFO -  * Detected change in '/Users/haopengwu/MetaSpace/repos/llm-vscode-server/main.py', reloading
+2024-01-19 23:26:45,815 - INFO -  * Restarting with stat
+2024-01-19 23:26:46,390 - WARNING -  * Debugger is active!
+2024-01-19 23:26:46,402 - INFO -  * Debugger PIN: 253-101-103
+2024-01-19 23:27:27,859 - INFO -  * Detected change in '/Users/haopengwu/MetaSpace/repos/llm-vscode-server/main.py', reloading
+2024-01-19 23:27:27,976 - INFO -  * Restarting with stat
+2024-01-19 23:27:28,711 - WARNING -  * Debugger is active!
+2024-01-19 23:27:28,724 - INFO -  * Debugger PIN: 253-101-103
+2024-01-19 23:28:27,468 - INFO - from flask import Flask, request
 from flask_restful import reqparse, abort, Api, Resource
 from langchain.chat_models import AzureChatOpenAI
 from langchain.schema import HumanMessage, SystemMessage
@@ -2068,6 +1397,8 @@ with open("conf.yml", "r") as f:
 END_TOKEN = config["END_TOKEN"]
 START_TOKEN = config["START_TOKEN"]
 MID_TOKEN = config["MID_TOKEN"]
+MAX_TOKENS = config["MAX_TOKENS"]
+
 
 class LLM:
     verbose = False
@@ -2085,6 +1416,7 @@ class LLM:
             openai_api_key=OPENAI_API_KEY,
             deployment_name=DEPLOYMENT,
             temperature=0,
+            max_tokens=MAX_TOKENS,
         )
 
     def complete_code(self, code_context):
@@ -2099,12 +1431,34 @@ class LLM:
         system_setting = SystemMessage(
             content="You are a code autocompleter.")
         prompt = f"""
-        Please complete code for the following code. Make code completion after the end token.
+        Please complete code for the following code. Only output code text without markdown. Make code completion after the end token.
         \n\n
-        {fore_context} 
+        {fore_context}
         """ 
-        logging.info(colored(fore_context), 
-2024-01-19 23:10:21,750 - INFO - from flask import Flask, request
+        logging.info(fore_context)
+        message = HumanMessage(content=prompt)
+        return self.llm.invoke([system_setting, message]).content
+
+llm = LLM(".env-35-16k.yml")
+
+def get_fore_context(inputs):
+    return inputs[: inputs.find(END_TOKEN)].replace(START_TOKEN,"") 
+
+class Health(Resource):
+    def get(self):
+        return {'message': 'healthy'}, 200
+
+class Generate(Resource):
+    def post(self):
+        content_type = request.headers.get('Content-Type')
+        if (content_type == 'application/json'):
+            request_json = request.get_json()
+            inputs = request_json['inputs']
+            # Returning a response with status code 200
+            return {'generated_text': llm.complete_code(inputs)}, 200
+        else:
+            return "Content type is not supported."
+2024-01-19 23:28:27,746 - INFO - from flask import Flask, request
 from flask_restful import reqparse, abort, Api, Resource
 from langchain.chat_models import AzureChatOpenAI
 from langchain.schema import HumanMessage, SystemMessage
@@ -2127,6 +1481,8 @@ with open("conf.yml", "r") as f:
 END_TOKEN = config["END_TOKEN"]
 START_TOKEN = config["START_TOKEN"]
 MID_TOKEN = config["MID_TOKEN"]
+MAX_TOKENS = config["MAX_TOKENS"]
+
 
 class LLM:
     verbose = False
@@ -2144,6 +1500,7 @@ class LLM:
             openai_api_key=OPENAI_API_KEY,
             deployment_name=DEPLOYMENT,
             temperature=0,
+            max_tokens=MAX_TOKENS,
         )
 
     def complete_code(self, code_context):
@@ -2158,12 +1515,35 @@ class LLM:
         system_setting = SystemMessage(
             content="You are a code autocompleter.")
         prompt = f"""
-        Please complete code for the following code. Make code completion after the end token.
+        Please complete code for the following code. Only output code text without markdown. Make code completion after the end token.
         \n\n
-        {fore_context} 
+        {fore_context}
         """ 
-        logging.info(colored(fore_context), "
-2024-01-19 23:10:22,740 - INFO - from flask import Flask, request
+        logging.info(fore_context)
+        message = HumanMessage(content=prompt)
+        return self.llm.invoke([system_setting, message]).content
+
+llm = LLM(".env-35-16k.yml")
+
+def get_fore_context(inputs):
+    return inputs[: inputs.find(END_TOKEN)].replace(START_TOKEN,"") 
+
+class Health(Resource):
+    def get(self):
+        return {'message': 'healthy'}, 200
+
+class Generate(Resource):
+    def post(self):
+        content_type = request.headers.get('Content-Type')
+        if (content_type == 'application/json'):
+            request_json = request.get_json()
+            inputs = request_json['inputs']
+            # Returning a response with status code 200
+            return {'generated_text': llm.complete_code(inputs)}, 200
+        else:
+            return "Content type is not supported."
+        
+2024-01-19 23:28:28,527 - INFO - from flask import Flask, request
 from flask_restful import reqparse, abort, Api, Resource
 from langchain.chat_models import AzureChatOpenAI
 from langchain.schema import HumanMessage, SystemMessage
@@ -2186,6 +1566,8 @@ with open("conf.yml", "r") as f:
 END_TOKEN = config["END_TOKEN"]
 START_TOKEN = config["START_TOKEN"]
 MID_TOKEN = config["MID_TOKEN"]
+MAX_TOKENS = config["MAX_TOKENS"]
+
 
 class LLM:
     verbose = False
@@ -2203,6 +1585,7 @@ class LLM:
             openai_api_key=OPENAI_API_KEY,
             deployment_name=DEPLOYMENT,
             temperature=0,
+            max_tokens=MAX_TOKENS,
         )
 
     def complete_code(self, code_context):
@@ -2217,12 +1600,36 @@ class LLM:
         system_setting = SystemMessage(
             content="You are a code autocompleter.")
         prompt = f"""
-        Please complete code for the following code. Make code completion after the end token.
+        Please complete code for the following code. Only output code text without markdown. Make code completion after the end token.
         \n\n
-        {fore_context} 
+        {fore_context}
         """ 
-        logging.info(colored(fore_context), "g
-2024-01-19 23:10:23,087 - INFO - from flask import Flask, request
+        logging.info(fore_context)
+        message = HumanMessage(content=prompt)
+        return self.llm.invoke([system_setting, message]).content
+
+llm = LLM(".env-35-16k.yml")
+
+def get_fore_context(inputs):
+    return inputs[: inputs.find(END_TOKEN)].replace(START_TOKEN,"") 
+
+class Health(Resource):
+    def get(self):
+        return {'message': 'healthy'}, 200
+
+class Generate(Resource):
+    def post(self):
+        content_type = request.headers.get('Content-Type')
+        if (content_type == 'application/json'):
+            request_json = request.get_json()
+            inputs = request_json['inputs']
+            # Returning a response with status code 200
+            return {'generated_text': llm.complete_code(inputs)}, 200
+        else:
+            return "Content type is not supported."
+    
+2024-01-19 23:28:28,738 - INFO - 127.0.0.1 - - [19/Jan/2024 23:28:28] "POST / HTTP/1.1" 200 -
+2024-01-19 23:28:28,921 - INFO - from flask import Flask, request
 from flask_restful import reqparse, abort, Api, Resource
 from langchain.chat_models import AzureChatOpenAI
 from langchain.schema import HumanMessage, SystemMessage
@@ -2245,6 +1652,8 @@ with open("conf.yml", "r") as f:
 END_TOKEN = config["END_TOKEN"]
 START_TOKEN = config["START_TOKEN"]
 MID_TOKEN = config["MID_TOKEN"]
+MAX_TOKENS = config["MAX_TOKENS"]
+
 
 class LLM:
     verbose = False
@@ -2262,6 +1671,7 @@ class LLM:
             openai_api_key=OPENAI_API_KEY,
             deployment_name=DEPLOYMENT,
             temperature=0,
+            max_tokens=MAX_TOKENS,
         )
 
     def complete_code(self, code_context):
@@ -2276,13 +1686,38 @@ class LLM:
         system_setting = SystemMessage(
             content="You are a code autocompleter.")
         prompt = f"""
-        Please complete code for the following code. Make code completion after the end token.
+        Please complete code for the following code. Only output code text without markdown. Make code completion after the end token.
         \n\n
-        {fore_context} 
+        {fore_context}
         """ 
-        logging.info(colored(fore_context), "gr
-2024-01-19 23:10:23,371 - INFO - 127.0.0.1 - - [19/Jan/2024 23:10:23] "POST / HTTP/1.1" 200 -
-2024-01-19 23:10:23,470 - INFO - from flask import Flask, request
+        logging.info(fore_context)
+        message = HumanMessage(content=prompt)
+        return self.llm.invoke([system_setting, message]).content
+
+llm = LLM(".env-35-16k.yml")
+
+def get_fore_context(inputs):
+    return inputs[: inputs.find(END_TOKEN)].replace(START_TOKEN,"") 
+
+class Health(Resource):
+    def get(self):
+        return {'message': 'healthy'}, 200
+
+class Generate(Resource):
+    def post(self):
+        content_type = request.headers.get('Content-Type')
+        if (content_type == 'application/json'):
+            request_json = request.get_json()
+            inputs = request_json['inputs']
+            # Returning a response with status code 200
+            return {'generated_text': llm.complete_code(inputs)}, 200
+        else:
+            return "Content type is not supported."
+
+2024-01-19 23:28:28,957 - INFO - 127.0.0.1 - - [19/Jan/2024 23:28:28] "POST / HTTP/1.1" 200 -
+2024-01-19 23:28:29,726 - INFO - 127.0.0.1 - - [19/Jan/2024 23:28:29] "POST / HTTP/1.1" 200 -
+2024-01-19 23:28:30,033 - INFO - 127.0.0.1 - - [19/Jan/2024 23:28:30] "POST / HTTP/1.1" 200 -
+2024-01-19 23:28:36,909 - INFO - from flask import Flask, request
 from flask_restful import reqparse, abort, Api, Resource
 from langchain.chat_models import AzureChatOpenAI
 from langchain.schema import HumanMessage, SystemMessage
@@ -2305,6 +1740,8 @@ with open("conf.yml", "r") as f:
 END_TOKEN = config["END_TOKEN"]
 START_TOKEN = config["START_TOKEN"]
 MID_TOKEN = config["MID_TOKEN"]
+MAX_TOKENS = config["MAX_TOKENS"]
+
 
 class LLM:
     verbose = False
@@ -2322,6 +1759,7 @@ class LLM:
             openai_api_key=OPENAI_API_KEY,
             deployment_name=DEPLOYMENT,
             temperature=0,
+            max_tokens=MAX_TOKENS,
         )
 
     def complete_code(self, code_context):
@@ -2336,12 +1774,32 @@ class LLM:
         system_setting = SystemMessage(
             content="You are a code autocompleter.")
         prompt = f"""
-        Please complete code for the following code. Make code completion after the end token.
+        Please complete code for the following code. Only output code text without markdown. Make code completion after the end token.
         \n\n
-        {fore_context} 
+        {fore_context}
         """ 
-        logging.info(colored(fore_context), "gre
-2024-01-19 23:10:23,594 - INFO - from flask import Flask, request
+        logging.info(fore_context)
+        message = HumanMessage(content=prompt)
+        return self.llm.invoke([system_setting, message]).content
+
+llm = LLM(".env-35-16k.yml")
+
+def get_fore_context(inputs):
+    return inputs[: inputs.find(END_TOKEN)].replace(START_TOKEN,"") 
+
+class Health(Resource):
+    def get(self):
+        return {'message': 'healthy'}, 200
+
+class Generate(Resource):
+    def post(self):
+        content_type = request.headers.get('Content-Type')
+        if (content_type == 'application/json'):
+            request_json = request.get_json()
+            inputs = request_json['inputs']
+            
+2024-01-19 23:28:38,239 - INFO - 127.0.0.1 - - [19/Jan/2024 23:28:38] "POST / HTTP/1.1" 200 -
+2024-01-19 23:28:40,075 - INFO - from flask import Flask, request
 from flask_restful import reqparse, abort, Api, Resource
 from langchain.chat_models import AzureChatOpenAI
 from langchain.schema import HumanMessage, SystemMessage
@@ -2364,6 +1822,8 @@ with open("conf.yml", "r") as f:
 END_TOKEN = config["END_TOKEN"]
 START_TOKEN = config["START_TOKEN"]
 MID_TOKEN = config["MID_TOKEN"]
+MAX_TOKENS = config["MAX_TOKENS"]
+
 
 class LLM:
     verbose = False
@@ -2381,6 +1841,7 @@ class LLM:
             openai_api_key=OPENAI_API_KEY,
             deployment_name=DEPLOYMENT,
             temperature=0,
+            max_tokens=MAX_TOKENS,
         )
 
     def complete_code(self, code_context):
@@ -2395,12 +1856,31 @@ class LLM:
         system_setting = SystemMessage(
             content="You are a code autocompleter.")
         prompt = f"""
-        Please complete code for the following code. Make code completion after the end token.
+        Please complete code for the following code. Only output code text without markdown. Make code completion after the end token.
         \n\n
-        {fore_context} 
+        {fore_context}
         """ 
-        logging.info(colored(fore_context), "gree
-2024-01-19 23:10:23,811 - INFO - from flask import Flask, request
+        logging.info(fore_context)
+        message = HumanMessage(content=prompt)
+        return self.llm.invoke([system_setting, message]).content
+
+llm = LLM(".env-35-16k.yml")
+
+def get_fore_context(inputs):
+    return inputs[: inputs.find(END_TOKEN)].replace(START_TOKEN,"") 
+
+class Health(Resource):
+    def get(self):
+        return {'message': 'healthy'}, 200
+
+class Generate(Resource):
+    def post(self):
+        content_type = request.headers.get('Content-Type')
+        if (content_type == 'application/json'):
+            request_json = request.get_json()
+            inputs = request_json['inputs']
+        
+2024-01-19 23:28:40,416 - INFO - from flask import Flask, request
 from flask_restful import reqparse, abort, Api, Resource
 from langchain.chat_models import AzureChatOpenAI
 from langchain.schema import HumanMessage, SystemMessage
@@ -2423,6 +1903,8 @@ with open("conf.yml", "r") as f:
 END_TOKEN = config["END_TOKEN"]
 START_TOKEN = config["START_TOKEN"]
 MID_TOKEN = config["MID_TOKEN"]
+MAX_TOKENS = config["MAX_TOKENS"]
+
 
 class LLM:
     verbose = False
@@ -2440,6 +1922,7 @@ class LLM:
             openai_api_key=OPENAI_API_KEY,
             deployment_name=DEPLOYMENT,
             temperature=0,
+            max_tokens=MAX_TOKENS,
         )
 
     def complete_code(self, code_context):
@@ -2454,19 +1937,276 @@ class LLM:
         system_setting = SystemMessage(
             content="You are a code autocompleter.")
         prompt = f"""
-        Please complete code for the following code. Make code completion after the end token.
+        Please complete code for the following code. Only output code text without markdown. Make code completion after the end token.
         \n\n
-        {fore_context} 
+        {fore_context}
         """ 
-        logging.info(colored(fore_context), "green
-2024-01-19 23:10:24,416 - INFO - 127.0.0.1 - - [19/Jan/2024 23:10:24] "POST / HTTP/1.1" 200 -
-2024-01-19 23:10:24,737 - INFO - 127.0.0.1 - - [19/Jan/2024 23:10:24] "POST / HTTP/1.1" 200 -
-2024-01-19 23:10:25,015 - INFO - 127.0.0.1 - - [19/Jan/2024 23:10:25] "POST / HTTP/1.1" 200 -
-2024-01-19 23:10:25,743 - INFO -  * Detected change in '/Users/haopengwu/MetaSpace/repos/llm-vscode-server/main.py', reloading
-2024-01-19 23:10:26,594 - WARNING -  * Debugger is active!
-2024-01-19 23:10:26,607 - INFO -  * Debugger PIN: 253-101-103
-2024-01-19 23:10:45,652 - INFO - 127.0.0.1 - - [19/Jan/2024 23:10:45] "POST / HTTP/1.1" 200 -
-2024-01-19 23:10:46,301 - INFO - 127.0.0.1 - - [19/Jan/2024 23:10:46] "POST / HTTP/1.1" 200 -
-2024-01-19 23:10:46,825 - INFO -  * Detected change in '/Users/haopengwu/MetaSpace/repos/llm-vscode-server/main.py', reloading
-2024-01-19 23:10:47,661 - WARNING -  * Debugger is active!
-2024-01-19 23:10:47,673 - INFO -  * Debugger PIN: 253-101-103
+        logging.info(fore_context)
+        message = HumanMessage(content=prompt)
+        return self.llm.invoke([system_setting, message]).content
+
+llm = LLM(".env-35-16k.yml")
+
+def get_fore_context(inputs):
+    return inputs[: inputs.find(END_TOKEN)].replace(START_TOKEN,"") 
+
+class Health(Resource):
+    def get(self):
+        return {'message': 'healthy'}, 200
+
+class Generate(Resource):
+    def post(self):
+        content_type = request.headers.get('Content-Type')
+        if (content_type == 'application/json'):
+            request_json = request.get_json()
+            inputs = request_json['inputs']
+    
+2024-01-19 23:28:40,692 - INFO - from flask import Flask, request
+from flask_restful import reqparse, abort, Api, Resource
+from langchain.chat_models import AzureChatOpenAI
+from langchain.schema import HumanMessage, SystemMessage
+import yaml
+import json
+from pprint import pprint
+from termcolor import colored
+
+import logging
+
+# Configure the logging module
+logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+app = Flask(__name__)
+api = Api(app)
+
+with open("conf.yml", "r") as f:
+    config = yaml.safe_load(f)
+
+END_TOKEN = config["END_TOKEN"]
+START_TOKEN = config["START_TOKEN"]
+MID_TOKEN = config["MID_TOKEN"]
+MAX_TOKENS = config["MAX_TOKENS"]
+
+
+class LLM:
+    verbose = False
+    def __init__(self, conf_file) -> None:
+        with open(conf_file, "r", encoding="utf-8") as f:
+            conf = yaml.safe_load(f.read())
+        OPENAI_API_KEY = conf["OPENAI_API_KEY"]
+        OPENAI_API_BASE = conf["OPENAI_API_BASE"]
+        OPENAI_API_VERSION = conf["OPENAI_API_VERSION"]
+        DEPLOYMENT = conf["DEPLOYMENT"]
+        self.llm = AzureChatOpenAI(
+            openai_api_type="azure",
+            openai_api_version=OPENAI_API_VERSION,
+            openai_api_base=OPENAI_API_BASE,
+            openai_api_key=OPENAI_API_KEY,
+            deployment_name=DEPLOYMENT,
+            temperature=0,
+            max_tokens=MAX_TOKENS,
+        )
+
+    def complete_code(self, code_context):
+        """Take the input from the request and output.
+
+        args:
+            code_context(str): the code_context
+
+        return(dict): the response
+        """
+        fore_context = get_fore_context(code_context)
+        system_setting = SystemMessage(
+            content="You are a code autocompleter.")
+        prompt = f"""
+        Please complete code for the following code. Only output code text without markdown. Make code completion after the end token.
+        \n\n
+        {fore_context}
+        """ 
+        logging.info(fore_context)
+        message = HumanMessage(content=prompt)
+        return self.llm.invoke([system_setting, message]).content
+
+llm = LLM(".env-35-16k.yml")
+
+def get_fore_context(inputs):
+    return inputs[: inputs.find(END_TOKEN)].replace(START_TOKEN,"") 
+
+class Health(Resource):
+    def get(self):
+        return {'message': 'healthy'}, 200
+
+class Generate(Resource):
+    def post(self):
+        content_type = request.headers.get('Content-Type')
+        if (content_type == 'application/json'):
+            request_json = request.get_json()
+            inputs = request_json['inputs']
+
+2024-01-19 23:28:41,063 - INFO - from flask import Flask, request
+from flask_restful import reqparse, abort, Api, Resource
+from langchain.chat_models import AzureChatOpenAI
+from langchain.schema import HumanMessage, SystemMessage
+import yaml
+import json
+from pprint import pprint
+from termcolor import colored
+
+import logging
+
+# Configure the logging module
+logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+app = Flask(__name__)
+api = Api(app)
+
+with open("conf.yml", "r") as f:
+    config = yaml.safe_load(f)
+
+END_TOKEN = config["END_TOKEN"]
+START_TOKEN = config["START_TOKEN"]
+MID_TOKEN = config["MID_TOKEN"]
+MAX_TOKENS = config["MAX_TOKENS"]
+
+
+class LLM:
+    verbose = False
+    def __init__(self, conf_file) -> None:
+        with open(conf_file, "r", encoding="utf-8") as f:
+            conf = yaml.safe_load(f.read())
+        OPENAI_API_KEY = conf["OPENAI_API_KEY"]
+        OPENAI_API_BASE = conf["OPENAI_API_BASE"]
+        OPENAI_API_VERSION = conf["OPENAI_API_VERSION"]
+        DEPLOYMENT = conf["DEPLOYMENT"]
+        self.llm = AzureChatOpenAI(
+            openai_api_type="azure",
+            openai_api_version=OPENAI_API_VERSION,
+            openai_api_base=OPENAI_API_BASE,
+            openai_api_key=OPENAI_API_KEY,
+            deployment_name=DEPLOYMENT,
+            temperature=0,
+            max_tokens=MAX_TOKENS,
+        )
+
+    def complete_code(self, code_context):
+        """Take the input from the request and output.
+
+        args:
+            code_context(str): the code_context
+
+        return(dict): the response
+        """
+        fore_context = get_fore_context(code_context)
+        system_setting = SystemMessage(
+            content="You are a code autocompleter.")
+        prompt = f"""
+        Please complete code for the following code. Only output code text without markdown. Make code completion after the end token.
+        \n\n
+        {fore_context}
+        """ 
+        logging.info(fore_context)
+        message = HumanMessage(content=prompt)
+        return self.llm.invoke([system_setting, message]).content
+
+llm = LLM(".env-35-16k.yml")
+
+def get_fore_context(inputs):
+    return inputs[: inputs.find(END_TOKEN)].replace(START_TOKEN,"") 
+
+class Health(Resource):
+    def get(self):
+        return {'message': 'healthy'}, 200
+
+class Generate(Resource):
+    def post(self):
+        content_type = request.headers.get('Content-Type')
+        if (content_type == 'application/json'):
+            request_json = request.get_json()
+            inputs = request_json['inputs']
+2024-01-19 23:28:41,292 - INFO - 127.0.0.1 - - [19/Jan/2024 23:28:41] "POST / HTTP/1.1" 200 -
+2024-01-19 23:28:41,621 - INFO - 127.0.0.1 - - [19/Jan/2024 23:28:41] "POST / HTTP/1.1" 200 -
+2024-01-19 23:28:41,973 - INFO - 127.0.0.1 - - [19/Jan/2024 23:28:41] "POST / HTTP/1.1" 200 -
+2024-01-19 23:28:42,397 - INFO - 127.0.0.1 - - [19/Jan/2024 23:28:42] "POST / HTTP/1.1" 200 -
+2024-01-19 23:28:42,487 - INFO -  * Detected change in '/Users/haopengwu/MetaSpace/repos/llm-vscode-server/main.py', reloading
+2024-01-19 23:28:42,601 - INFO -  * Restarting with stat
+2024-01-19 23:28:43,371 - WARNING -  * Debugger is active!
+2024-01-19 23:28:43,385 - INFO -  * Debugger PIN: 253-101-103
+2024-01-19 23:29:07,966 - INFO - import spacy
+import spacy
+
+2024-01-19 23:29:08,382 - INFO - import spacy
+import spacy
+2024-01-19 23:29:09,122 - INFO - 127.0.0.1 - - [19/Jan/2024 23:29:09] "POST / HTTP/1.1" 200 -
+2024-01-19 23:29:09,405 - INFO - 127.0.0.1 - - [19/Jan/2024 23:29:09] "POST / HTTP/1.1" 200 -
+2024-01-19 23:29:09,488 - INFO - import spacy
+import spac
+2024-01-19 23:29:09,696 - INFO - import spacy
+import spa
+2024-01-19 23:29:09,853 - INFO - import spacy
+import sp
+2024-01-19 23:29:09,982 - INFO - import spacy
+import s
+2024-01-19 23:29:10,117 - INFO - import spacy
+import 
+2024-01-19 23:29:10,253 - INFO - import spacy
+import
+2024-01-19 23:29:10,375 - INFO - import spacy
+impor
+2024-01-19 23:29:10,442 - INFO - 127.0.0.1 - - [19/Jan/2024 23:29:10] "POST / HTTP/1.1" 200 -
+2024-01-19 23:29:10,505 - INFO - import spacy
+impo
+2024-01-19 23:29:10,635 - INFO - import spacy
+imp
+2024-01-19 23:29:10,748 - INFO - 127.0.0.1 - - [19/Jan/2024 23:29:10] "POST / HTTP/1.1" 200 -
+2024-01-19 23:29:10,780 - INFO - import spacy
+im
+2024-01-19 23:29:10,786 - INFO - 127.0.0.1 - - [19/Jan/2024 23:29:10] "POST / HTTP/1.1" 200 -
+2024-01-19 23:29:10,916 - INFO - import spacy
+i
+2024-01-19 23:29:11,030 - INFO - 127.0.0.1 - - [19/Jan/2024 23:29:11] "POST / HTTP/1.1" 200 -
+2024-01-19 23:29:11,076 - INFO - import spacy
+
+2024-01-19 23:29:11,112 - INFO - 127.0.0.1 - - [19/Jan/2024 23:29:11] "POST / HTTP/1.1" 200 -
+2024-01-19 23:29:11,129 - INFO - 127.0.0.1 - - [19/Jan/2024 23:29:11] "POST / HTTP/1.1" 200 -
+2024-01-19 23:29:11,333 - INFO - 127.0.0.1 - - [19/Jan/2024 23:29:11] "POST / HTTP/1.1" 200 -
+2024-01-19 23:29:11,592 - INFO - 127.0.0.1 - - [19/Jan/2024 23:29:11] "POST / HTTP/1.1" 200 -
+2024-01-19 23:29:11,746 - INFO - 127.0.0.1 - - [19/Jan/2024 23:29:11] "POST / HTTP/1.1" 200 -
+2024-01-19 23:29:11,891 - INFO - 127.0.0.1 - - [19/Jan/2024 23:29:11] "POST / HTTP/1.1" 200 -
+2024-01-19 23:29:11,998 - INFO - 127.0.0.1 - - [19/Jan/2024 23:29:11] "POST / HTTP/1.1" 200 -
+2024-01-19 23:29:12,148 - INFO - 127.0.0.1 - - [19/Jan/2024 23:29:12] "POST / HTTP/1.1" 200 -
+2024-01-19 23:29:13,173 - INFO - import spacy
+
+2024-01-19 23:29:14,376 - INFO - 127.0.0.1 - - [19/Jan/2024 23:29:14] "POST / HTTP/1.1" 200 -
+2024-01-19 23:29:20,972 - INFO - import spacy
+import spacy
+
+nlp = spacy.load("en_core_web_sm")
+
+text = "Enter your text here"
+
+doc = nlp(text)
+
+
+2024-01-19 23:29:22,940 - INFO - 127.0.0.1 - - [19/Jan/2024 23:29:22] "POST / HTTP/1.1" 200 -
+2024-01-19 23:29:35,205 - INFO - import spacy
+import spacy
+
+nlp = spacy.load("en_core_web_sm")
+
+text = "Enter your text here"
+
+doc = nlp(text)
+
+import spacy
+
+nlp = spacy.load("en_core_web_sm")
+
+text = "Enter your text here"
+
+doc = nlp(text)
+
+
+2024-01-19 23:29:36,937 - INFO - 127.0.0.1 - - [19/Jan/2024 23:29:36] "POST / HTTP/1.1" 200 -
+2024-01-19 23:32:39,959 - INFO -  * Detected change in '/Users/haopengwu/MetaSpace/repos/llm-vscode-server/main.py', reloading
+2024-01-19 23:32:40,075 - INFO -  * Restarting with stat
+2024-01-19 23:32:40,773 - WARNING -  * Debugger is active!
+2024-01-19 23:32:40,786 - INFO -  * Debugger PIN: 253-101-103

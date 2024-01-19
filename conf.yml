@@ -1,3 +1,4 @@
 END_TOKEN: "<fim_suffix>"
 START_TOKEN: "<fim_prefix>"
 MID_TOKEN: "<fim_middle>" 
+MAX_TOKENS: 30

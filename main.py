@@ -21,6 +21,8 @@ with open("conf.yml", "r") as f:
 END_TOKEN = config["END_TOKEN"]
 START_TOKEN = config["START_TOKEN"]
 MID_TOKEN = config["MID_TOKEN"]
+MAX_TOKENS = config["MAX_TOKENS"]
+
 
 class LLM:
     verbose = False
@@ -38,6 +40,7 @@ class LLM:
             openai_api_key=OPENAI_API_KEY,
             deployment_name=DEPLOYMENT,
             temperature=0,
+            max_tokens=MAX_TOKENS,
         )
 
     def complete_code(self, code_context):
@@ -52,15 +55,16 @@ class LLM:
         system_setting = SystemMessage(
             content="You are a code autocompleter.")
         prompt = f"""
-        Please complete code for the following code. Make code completion after the end token.
+        Please complete code for the following code. Only output code text without markdown. Make code completion after the end token.
         \n\n
-        {fore_context} 
+        {fore_context}
         """ 
-        logging.info(colored(fore_context), "yellow")
+        logging.info(fore_context)
         message = HumanMessage(content=prompt)
         return self.llm.invoke([system_setting, message]).content
 
-llm = LLM(".env-35-16k.yml") 
+llm = LLM(".env-35-16k.yml")
+
 def get_fore_context(inputs):
     return inputs[: inputs.find(END_TOKEN)].replace(START_TOKEN,"") 
 
@@ -78,8 +82,6 @@ class Generate(Resource):
             return {'generated_text': llm.complete_code(inputs)}, 200
         else:
             return "Content type is not supported."
-
-
 
 
 ##
