@@ -3,9 +3,6 @@ from flask_restful import reqparse, abort, Api, Resource
 from langchain.chat_models import AzureChatOpenAI
 from langchain.schema import HumanMessage, SystemMessage
 import yaml
-import json
-from pprint import pprint
-from termcolor import colored
 
 import logging
 
