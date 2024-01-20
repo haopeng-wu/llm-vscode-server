@@ -55,7 +55,7 @@ class LLM:
         Please complete code for the following code. Only output code text without markdown. Make code completion after the end token.
         \n\n
         {fore_context}
-        """ 
+        """
         logging.info(fore_context)
         message = HumanMessage(content=prompt)
         return self.llm.invoke([system_setting, message]).content
