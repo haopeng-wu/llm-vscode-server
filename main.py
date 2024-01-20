@@ -90,6 +90,8 @@ api.add_resource(Health, '/health')
 # curl http://localhost:5000/generate -d '{"inputs":"hi"}' -H "Content-Type: application/json" -v
 api.add_resource(Generate, '/generate', '/')
  
+def run():
+    app.run(debug=True)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    run()
