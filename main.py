@@ -86,9 +86,9 @@ class Generate(Resource):
 ## Actually setup the Api resource routing here
 ##
 
-# curl http://localhost:5000/health
+# curl http://0.0.0.0:8000/health
 api.add_resource(Health, '/health')
-# curl http://localhost:5000/generate -d '{"inputs":"hi"}' -H "Content-Type: application/json" -v
+# curl http://0.0.0.0:8000/generate -d '{"inputs":"hi"}' -H "Content-Type: application/json" -v
 api.add_resource(Generate, '/generate', '/')
  
 def run():
@@ -109,7 +109,7 @@ class StandaloneRandomNumberAPI(BaseApplication):
 
 if __name__ == "__main__":
     options = {
-        'bind': '%s:%s' % ('0.0.0.0', '7000'),
+        'bind': '%s:%s' % ('0.0.0.0', '8000'),
         'workers': 2,
     }
     StandaloneRandomNumberAPI(app, options).run()
