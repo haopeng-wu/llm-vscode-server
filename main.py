@@ -21,6 +21,9 @@ START_TOKEN = config["START_TOKEN"]
 MID_TOKEN = config["MID_TOKEN"]
 MAX_TOKENS = config["MAX_TOKENS"]
 
+NUM_WORKS = config["NUM_WORKS"]
+PORT = config["PORT"]
+
 
 class LLM:
     verbose = False
@@ -109,7 +112,7 @@ class StandaloneRandomNumberAPI(BaseApplication):
 
 if __name__ == "__main__":
     options = {
-        'bind': '%s:%s' % ('0.0.0.0', '8000'),
-        'workers': 2,
+        'bind': '%s:%s' % ('0.0.0.0', PORT),
+        'workers': NUM_WORKS,
     }
     StandaloneRandomNumberAPI(app, options).run()
