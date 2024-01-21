@@ -109,7 +109,7 @@ class StandaloneRandomNumberAPI(BaseApplication):
 
 if __name__ == "__main__":
     options = {
-        'bind': '%s:%s' % ('127.0.0.1', '7000'),
+        'bind': '%s:%s' % ('0.0.0.0', '7000'),
         'workers': 2,
     }
     StandaloneRandomNumberAPI(app, options).run()
