@@ -5,3 +5,4 @@ __python*
 .env-gpt4.yml
 .env-openai.yml
 tmp-requirement.txt
+*.ipynb
