@@ -89,9 +89,7 @@ class Generate(Resource):
 ## Actually setup the Api resource routing here
 ##
 
-# curl http://0.0.0.0:8000/health
 api.add_resource(Health, '/health')
-# curl http://0.0.0.0:8000/generate -d '{"inputs":"hi"}' -H "Content-Type: application/json" -v
 api.add_resource(Generate, '/generate', '/')
  
 def run():
