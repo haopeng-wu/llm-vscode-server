@@ -64,7 +64,7 @@ class LLM:
         message = HumanMessage(content=prompt)
         return self.llm.invoke([system_setting, message]).content
 
-llm = LLM(".env-35-16k.yml")
+llm = LLM(".env-openai.yml")
 
 def get_fore_context(inputs):
     return inputs[: inputs.find(END_TOKEN)].replace(START_TOKEN,"") 

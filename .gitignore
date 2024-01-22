@@ -1,3 +1,5 @@
 .env.*
 *.log
 __python*
+.env-35-16k.yml
+.env-gpt4.yml
