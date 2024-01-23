@@ -26,7 +26,6 @@ PORT = config["PORT"]
 
 
 class LLM:
-    verbose = False
     def __init__(self, conf_file) -> None:
         with open(conf_file, "r", encoding="utf-8") as f:
             conf = yaml.safe_load(f.read())
@@ -91,9 +90,6 @@ class Generate(Resource):
 
 api.add_resource(Health, '/health')
 api.add_resource(Generate, '/generate', '/')
- 
-def run():
-    app.run(debug=True)
 
 class StandaloneRandomNumberAPI(BaseApplication):
     def __init__(self, app, options=None):
