@@ -19,7 +19,11 @@ docker build  -t llm-server:0.1 .
 
 2. Run the container
 ```bash
+# for linux/mac
 docker container run -p 8001:8000 -v "$(pwd)":/app llm-server:0.1
+
+# for windows
+docker container run -p 8001:8000 -v $PWD/:/app llm-server:0.1
 ```
 
 3. Test it
