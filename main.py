@@ -1,11 +1,12 @@
 from flask import Flask, request
 from flask_restful import reqparse, abort, Api, Resource
-from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
+
 from gunicorn.app.base import BaseApplication
 import yaml
 
 import logging
+
+from llm import LLM
 
 # Configure the logging module
 logging.basicConfig(filename='llm.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -16,57 +17,10 @@ api = Api(app)
 with open("conf.yml", "r") as f:
     config = yaml.safe_load(f)
 
-END_TOKEN = config["END_TOKEN"]
-START_TOKEN = config["START_TOKEN"]
-MID_TOKEN = config["MID_TOKEN"]
-MAX_TOKENS = config["MAX_TOKENS"]
-
-NUM_WORKS = config["NUM_WORKS"]
 PORT = config["PORT"]
 
+llm = LLM(config)
 
-class LLM:
-    def __init__(self, conf_file) -> None:
-        with open(conf_file, "r", encoding="utf-8") as f:
-            conf = yaml.safe_load(f.read())
-        OPENAI_API_KEY = conf["OPENAI_API_KEY"]
-        OPENAI_API_BASE = conf["OPENAI_API_BASE"]
-        OPENAI_API_VERSION = conf["OPENAI_API_VERSION"]
-        DEPLOYMENT = conf["DEPLOYMENT"]
-        self.llm = AzureChatOpenAI(
-            openai_api_type="azure",
-            openai_api_version=OPENAI_API_VERSION,
-            openai_api_base=OPENAI_API_BASE,
-            openai_api_key=OPENAI_API_KEY,
-            deployment_name=DEPLOYMENT,
-            temperature=0,
-            max_tokens=MAX_TOKENS,
-        )
-
-    def complete_code(self, code_context):
-        """Take the input from the request and output.
-
-        args:
-            code_context(str): the code_context
-
-        return(dict): the response
-        """
-        fore_context = get_fore_context(code_context)
-        system_setting = SystemMessage(
-            content="You are a code autocompleter.")
-        prompt = f"""
-        Please complete code for the following code. Only output code text without markdown. Make code completion after the end token.
-        \n\n
-        {fore_context}
-        """
-        logging.info(fore_context)
-        message = HumanMessage(content=prompt)
-        return self.llm.invoke([system_setting, message]).content
-
-llm = LLM(".env-openai.yml")
-
-def get_fore_context(inputs):
-    return inputs[: inputs.find(END_TOKEN)].replace(START_TOKEN,"") 
 
 class Health(Resource):
     def get(self):
@@ -78,7 +32,6 @@ class Generate(Resource):
         if (content_type == 'application/json'):
             request_json = request.get_json()
             inputs = request_json['inputs']
-            # Returning a response with status code 200
             return {'generated_text': llm.complete_code(inputs)}, 200
         else:
             return "Content type is not supported."
@@ -107,6 +60,6 @@ class StandaloneRandomNumberAPI(BaseApplication):
 if __name__ == "__main__":
     options = {
         'bind': '%s:%s' % ('0.0.0.0', PORT),
-        'workers': NUM_WORKS,
+        'workers': 4,
     }
     StandaloneRandomNumberAPI(app, options).run()
