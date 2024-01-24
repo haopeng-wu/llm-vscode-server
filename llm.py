@@ -3,10 +3,13 @@ from langchain.schema import HumanMessage, SystemMessage
 
 import yaml
 
+
 class LLM:
     def __init__(self, conf) -> None:
         self.llm = self.get_openai_model(conf)
-    
+        self.END_TOKEN = conf["END_TOKEN"]
+        self.START_TOKEN = conf["START_TOKEN"]
+
     def get_openai_model(self, conf):
         with open(conf["openai_key_file"], "r", encoding="utf-8") as f:
             key_conf = yaml.safe_load(f.read())
@@ -15,8 +18,6 @@ class LLM:
         OPENAI_API_VERSION = key_conf["OPENAI_API_VERSION"]
         DEPLOYMENT = key_conf["DEPLOYMENT"]
         MAX_TOKENS = conf["MAX_TOKENS"]
-        MID_TOKEN = conf["MID_TOKEN"]
-        NUM_WORKS = conf["NUM_WORKS"]
 
         return AzureChatOpenAI(
             openai_api_type="azure",
@@ -27,11 +28,11 @@ class LLM:
             temperature=0,
             max_tokens=MAX_TOKENS,
         )
-    
-    def get_fore_context(inputs, conf):
-        END_TOKEN = conf["END_TOKEN"]
-        START_TOKEN = conf["START_TOKEN"]
-        return inputs[: inputs.find(END_TOKEN)].replace(START_TOKEN,"") 
+
+    def get_fore_context(self, inputs):
+        return inputs[: inputs.find(self.END_TOKEN)].replace(
+            self.START_TOKEN, ""
+            )
 
     def complete_code(self, code_context):
         """Take the input from the request and output.
@@ -45,7 +46,8 @@ class LLM:
         system_setting = SystemMessage(
             content="You are a code autocompleter.")
         prompt = f"""
-        Please complete code for the following code. Only output code text without markdown. Make code completion after the end token.
+        Please complete code for the following code. Only output code text
+        without markdown. Make code completion after the end token.
         \n\n
         {fore_context}
         """
