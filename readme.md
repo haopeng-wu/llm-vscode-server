@@ -36,6 +36,6 @@ curl http://127.0.0.1:8001/generate -d '{"inputs":"import spacy"}' -H "Content-T
 ```
 
 4. Use with the extension
-    1. install the vscode extension, llm-vscode, and open the settings for it
-    2. change “Config Template” to custom
-    3. change “Model ID Or Endpoint” to http://localhost:8001/ or http://0.0.0.0:8001/, whichever works for you.
+    1. install the vscode extension, `llm-vscode`, and open the settings for it
+    2. change “Config Template” to `custom`
+    3. change “Model ID Or Endpoint” to `http://localhost:8001/` or `http://0.0.0.0:8001/`, whichever works for you.
