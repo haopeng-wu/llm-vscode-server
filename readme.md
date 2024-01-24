@@ -28,9 +28,14 @@ docker container run -p 8001:8000 -v $PWD/:/app llm-server:0.1
 
 3. Test it
 ```bash
-curl http://0.0.0.0:8001/health
+curl http://127.0.0.1:8001/health
 ```
 
 ```bash
-curl http://0.0.0.0:8001/generate -d '{"inputs":"import spacy"}' -H "Content-Type: application/json"
+curl http://127.0.0.1:8001/generate -d '{"inputs":"import spacy"}' -H "Content-Type: application/json"
 ```
+
+4. Use with the extension
+    1. install the vscode extension, llm-vscode, and open the settings for it
+    2. change “Config Template” to custom
+    3. change “Model ID Or Endpoint” to http://localhost:8001/ or http://0.0.0.0:8001/, whichever works for you.
