@@ -1,6 +1,8 @@
 from langchain.llms import AzureOpenAI
 from langchain.chat_models import AzureChatOpenAI
 from langchain.schema import HumanMessage, SystemMessage
+from langchain.prompts import PromptTemplate
+
 
 import yaml
 
@@ -58,13 +60,8 @@ class LLM:
         return(dict): the response
         """
         fore_context = self.get_fore_context(code_context)
-        system_setting = SystemMessage(
-            content="You are a code autocompleter.")
-        prompt = f"""
-        Please complete code for the following code. Only output code text
-        without markdown. Make code completion after the end token.
-        \n\n
-        {fore_context}
-        """
-        message = HumanMessage(content=prompt)
-        return self.model.invoke([system_setting, message]).content
+        prompt_template = PromptTemplate.from_template(
+            "Complete the following code.\n{prior_code}."
+        )
+        chain = prompt_template | self.model
+        return chain.invoke({"prior_code": fore_context})
