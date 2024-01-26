@@ -9,3 +9,6 @@ PORT: "8000"
 
 # openai secret
 openai_key_file: ".env-openai.yml"
+
+# True for chat model, False for llm
+is_chat_model: True
