@@ -1,8 +1,7 @@
 from langchain.llms import AzureOpenAI
 from langchain.chat_models import AzureChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
 from langchain.prompts import PromptTemplate
-
+from langchain_core.output_parsers import StrOutputParser
 
 import yaml
 
@@ -72,5 +71,6 @@ class LLM:
             The inserted code will be used in place in a code editor."""
         prompt_template = PromptTemplate.from_template(
             prompt_context + "Only output the inserted code. The code snippet is the following, delimited by ```. \n\n```{code_context}```")
-        chain = prompt_template | self.model 
+        output_parser = StrOutputParser()
+        chain = prompt_template | self.model | output_parser
         return chain.invoke({"code_context": code_context})
