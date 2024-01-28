@@ -2,6 +2,7 @@ from langchain.llms import AzureOpenAI
 from langchain.chat_models import AzureChatOpenAI
 from langchain.prompts import PromptTemplate
 from langchain_core.output_parsers import StrOutputParser
+import re
 
 import yaml
 
@@ -12,6 +13,7 @@ class LLM:
         self.START_TOKEN = conf["START_TOKEN"]
         self.MID_TOKEN = conf["MID_TOKEN"]
         self.MAX_TOKENS = conf["MAX_TOKENS"]
+        self.mk_re = re.compile(r"^(```.*[\n ]?)(.*)")
         # read secret
         with open(conf["openai_key_file"], "r", encoding="utf-8") as f:
             key_conf = yaml.safe_load(f.read())
@@ -74,6 +76,7 @@ class LLM:
         output_parser = StrOutputParser()
         chain = prompt_template | self.model | output_parser
         completion = chain.invoke({"code_context": code_context})
-        if self.is_chat_model and "```" in completion and len(completion) < 16:  #  empty result
-            return ""
-        return chain.invoke({"code_context": code_context})
+        mk_match = self.mk_re.match(completion)
+        if mk_match:
+            completion = mk_match.group(2)
+        return completion
