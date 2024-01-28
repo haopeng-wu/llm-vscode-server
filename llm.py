@@ -19,7 +19,7 @@ class LLM:
         self.OPENAI_API_BASE = key_conf["OPENAI_API_BASE"]
         self.OPENAI_API_VERSION = key_conf["OPENAI_API_VERSION"]
         self.DEPLOYMENT = key_conf["DEPLOYMENT"]
-
+        self.is_chat_model = conf["is_chat_model"]
         if conf["is_chat_model"]:
             self.model = self.get_chat_model()
         else:
@@ -73,4 +73,7 @@ class LLM:
             prompt_context + "Only output the inserted code without markdown tags or any other non-code tags. The code snippet is the following, delimited by ```. \n\n```{code_context}```")
         output_parser = StrOutputParser()
         chain = prompt_template | self.model | output_parser
+        completion = chain.invoke({"code_context": code_context})
+        if self.is_chat_model and "```" in completion and len(completion) < 16:  #  empty result
+            return ""
         return chain.invoke({"code_context": code_context})
