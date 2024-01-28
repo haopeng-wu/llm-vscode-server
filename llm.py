@@ -70,7 +70,7 @@ class LLM:
             with {self.START_TOKEN} and ends by {self.MID_TOKEN}. Insert code right after {self.MID_TOKEN}.
             The inserted code will be used in place in a code editor."""
         prompt_template = PromptTemplate.from_template(
-            prompt_context + "Only output the inserted code. The code snippet is the following, delimited by ```. \n\n```{code_context}```")
+            prompt_context + "Only output the inserted code without markdown tags or any other non-code tags. The code snippet is the following, delimited by ```. \n\n```{code_context}```")
         output_parser = StrOutputParser()
         chain = prompt_template | self.model | output_parser
         return chain.invoke({"code_context": code_context})
