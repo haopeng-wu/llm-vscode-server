@@ -13,7 +13,7 @@ class LLM:
         self.START_TOKEN = conf["START_TOKEN"]
         self.MID_TOKEN = conf["MID_TOKEN"]
         self.MAX_TOKENS = conf["MAX_TOKENS"]
-        self.mk_re = re.compile(r"^(```.*[\n ]?)(.*)")
+        self.mk_re = re.compile(r"^(```.*)([\n]?)(.*)")
         # read secret
         with open(conf["openai_key_file"], "r", encoding="utf-8") as f:
             key_conf = yaml.safe_load(f.read())
@@ -68,9 +68,8 @@ class LLM:
 
         return(dict): the response
         """
-        prompt_context = f"""Please insert code in the middle of following code snippet. The code snippet starts
-            with {self.START_TOKEN} and ends by {self.MID_TOKEN}. Insert code right after {self.MID_TOKEN}.
-            The inserted code will be used in place in a code editor."""
+        prompt_context = f"""Please complete code for the given code snippet."""
+        code_context = self.get_fore_context(code_context)
         prompt_template = PromptTemplate.from_template(
             prompt_context + "Only output the inserted code without markdown tags or any other non-code tags. The code snippet is the following, delimited by ```. \n\n```{code_context}```")
         output_parser = StrOutputParser()
@@ -78,5 +77,5 @@ class LLM:
         completion = chain.invoke({"code_context": code_context})
         mk_match = self.mk_re.match(completion)
         if mk_match:
-            completion = mk_match.group(2)
+            completion = mk_match.group(2) + mk_match.group(3)
         return completion
