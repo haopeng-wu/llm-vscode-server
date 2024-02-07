@@ -2,6 +2,5 @@
 *.log
 __python*
 tmp-requirement.txt
-*.ipynb
  __pycache__/*
  *pyc
