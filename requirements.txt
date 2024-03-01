@@ -5,3 +5,7 @@ langchain==0.0.339rc1
 langchain-core==0.0.4
 openai==0.28.1
 Werkzeug==3.0.1
+torch
+transformers
+chardet
+accelerate

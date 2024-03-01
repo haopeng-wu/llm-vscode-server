@@ -4,13 +4,12 @@ from flask_restful import Api, Resource
 from gunicorn.app.base import BaseApplication
 import yaml
 
-import logging
-
 from llm import LLM
 
 # Configure the logging module
-logging.basicConfig(filename='llm.log',
-                    level=logging.INFO,
+import logging
+logging.basicConfig(filename="llm.log",
+                    level=logging.DEBUG,
                     format='%(asctime)s - %(levelname)s - %(message)s')
 
 app = Flask(__name__)
