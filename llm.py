@@ -1,8 +1,10 @@
+import torch. multiprocessing as mp
 from accelerate import Accelerator
-accelerator = Accelerator()
 from transformers import AutoModelForCausalLM, AutoTokenizer  # noqa: E402
 # Configure the logging module
 import logging
+
+accelerator = Accelerator()
 
 
 tokenizer = AutoTokenizer.from_pretrained(

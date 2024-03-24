@@ -5,7 +5,7 @@ MAX_TOKENS: 30
 
 # server conf
 NUM_WORKS: 2
-PORT: "8000"
+PORT: "8001"
 
 # openai secret
 openai_key_file: ".env-openai.yml"
