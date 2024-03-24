@@ -3,5 +3,5 @@
 __python*
 tmp-requirement.txt
 *.ipynb
- *pyc
- __pycache__
+*pyc
+__pycache__

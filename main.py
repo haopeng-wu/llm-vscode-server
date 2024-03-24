@@ -15,11 +15,6 @@ logging.basicConfig(filename="llm.log",
 app = Flask(__name__)
 api = Api(app)
 
-with open("conf.yml", "r") as f:
-    config = yaml.safe_load(f)
-
-PORT = config["PORT"]
-
 
 class Health(Resource):
     def get(self):
@@ -31,7 +26,7 @@ class Generate(Resource):
         content_type = request.headers.get('Content-Type')
         if (content_type == 'application/json'):
             inputs = request.get_json()['inputs']
-            llm = LLM(config)
+            llm = LLM(app.config['MODEL'])
             return {'generated_text': llm.complete_code(inputs)}, 200
         else:
             return "Content type is not supported."
@@ -39,27 +34,3 @@ class Generate(Resource):
 
 api.add_resource(Health, '/health')
 api.add_resource(Generate, '/generate', '/')
-
-
-class StandaloneRandomNumberAPI(BaseApplication):
-    def __init__(self, app, options=None):
-        self.options = options or {}
-        self.application = app
-        super().__init__()
-
-    def load_config(self):
-        config = {key: value for key, value in self.options.items()
-                  if key in self.cfg.settings and value is not None}
-        for key, value in config.items():
-            self.cfg.set(key.lower(), value)
-
-    def load(self):
-        return self.application
-
-
-if __name__ == "__main__":
-    options = {
-        'bind': '%s:%s' % ('0.0.0.0', PORT),
-        'workers': 4,
-    }
-    StandaloneRandomNumberAPI(app, options).run()

@@ -10,23 +10,23 @@ import os
 
 
 class LLM:
-    def __init__(self, conf) -> None:
-        self.model = self.request_model("tcp://127.0.0.1:5555")
+    def __init__(self, model) -> None:
+        self.model = model
         self.tokenizer = AutoTokenizer.from_pretrained(
             "stabilityai/stable-code-3b")
 
-    @staticmethod
-    def request_model(zmq_url: str):
-        logging.info("Connecting")
-        context = zmq.Context()
-        with context.socket(zmq.REQ) as socket:
-            socket.connect(zmq_url)
-            logging.info("Sending request")
-            socket.send(ForkingPickler.dumps(os.getpid()))
-            logging.info("Waiting for a response")
-            model = ForkingPickler.loads(socket.recv())
-        logging.info("Got response from object server")
-        return model
+    # @staticmethod
+    # def request_model(zmq_url: str):
+    #     logging.info("Connecting")
+    #     context = zmq.Context()
+    #     with context.socket(zmq.REQ) as socket:
+    #         socket.connect(zmq_url)
+    #         logging.info("Sending request")
+    #         socket.send(ForkingPickler.dumps(os.getpid()))
+    #         logging.info("Waiting for a response")
+    #         model = ForkingPickler.loads(socket.recv())
+    #     logging.info("Got response from object server")
+    #     return model
 
     def complete_code(self, code_context):
         """Take the input from the request and output.
