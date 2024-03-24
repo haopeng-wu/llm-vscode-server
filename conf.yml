@@ -1,14 +1,3 @@
-END_TOKEN: "<fim_suffix>"
-START_TOKEN: "<fim_prefix>"
-MID_TOKEN: "<fim_middle>" 
-MAX_TOKENS: 30
-
 # server conf
 NUM_WORKS: 2
-PORT: "8001"
-
-# openai secret
-openai_key_file: ".env-openai.yml"
-
-# True for chat model, False for llm
-is_chat_model: True
+PORT: "8000"

@@ -20,8 +20,6 @@ with open("conf.yml", "r") as f:
 
 PORT = config["PORT"]
 
-llm = LLM(config)
-
 
 class Health(Resource):
     def get(self):
@@ -32,8 +30,8 @@ class Generate(Resource):
     def post(self):
         content_type = request.headers.get('Content-Type')
         if (content_type == 'application/json'):
-            request_json = request.get_json()
-            inputs = request_json['inputs']
+            inputs = request.get_json()['inputs']
+            llm = LLM(config)
             return {'generated_text': llm.complete_code(inputs)}, 200
         else:
             return "Content type is not supported."

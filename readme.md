@@ -1,12 +1,4 @@
-# Before running
-Create .env-openai.yml and populate your openai credentials into .env-openai.yml
-
-```yaml
-OPENAI_API_KEY: xxx
-OPENAI_API_BASE: xxx
-OPENAI_API_VERSION: xxx
-DEPLOYMENT: xxx
-```
+# Obsolete
 
 # To run
 ```bash
